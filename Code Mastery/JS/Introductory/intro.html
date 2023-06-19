@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        {console.log("This is called from head")}
+    </script>
+</head>
+<body>
+
+    <p id="tag"></p>
+    <button onclick="window.print()">Print this with window.print()</button>
+    <script src="intro.js"></script>
+    <script>
+        {console.log("This is called from body")}
+        document.getElementById("tag").innerHTML = "I am created by 'getElementById'";
+        window.alert("This Alert is generated with 'window.alert'");
+        // document.write("This is created by 'write'");
+    </script>
+</body>
+</html>
