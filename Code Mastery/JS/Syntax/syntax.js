@@ -41,3 +41,11 @@ car.owner = "Johnson";
 // But you cannot reassign
 car = {type:"Tesla", model:"500", color:"white"}; 
 
+// Postfix increament
+let y = 5;
+let x = y++; // x = 5; y = 6
+
+// Prefix increament
+let q = 5;
+let p = ++q; // p = 6; q = 6
+

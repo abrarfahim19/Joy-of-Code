@@ -106,3 +106,97 @@ The common paradigm goes as follows
 ```jsx
 <element event='some JavaScript'>
 ```
+
+## Strings
+
+use of backslash operator is common in many programming language
+
+```jsx
+let text = "We are the so-called \"Vikings\" from the north.";
+```
+
+Don’t create string object because:
+
+```jsx
+let x = "John";
+let y = new String("John");
+x == y // true
+x === y // false
+```
+
+For object
+
+```jsx
+let x = new String("John");
+let y = new String("John");
+x == y // false
+x === y // false
+```
+
+<aside>
+💡 **In JavaScript, when comparing two objects using the equality operators (`==` or `===`), the comparison is based on reference equality rather than the equality of their contents.**
+
+</aside>
+
+String methods
+
+- String **length**
+- String **slice()**
+- String **substring()**
+- String **substr()**
+- String **replace()**
+- String **replaceAll()**
+- String **toUpperCase()**
+- String **toLowerCase()**
+- String **concat()**
+- String **trim()**
+- String **trimStart()**
+- String **trimEnd()**
+- String **padStart()**
+- String **padEnd()**
+- String **charAt()**
+- String **charCodeAt()**
+- String **split()**
+
+Some Interesting methods to look out for:
+
+```jsx
+let text = "Please visit Microsoft site by Microsoft!";
+let newText = text.replace(/MICROSOFT/i, "W3Schools");
+// i for insensetive
+let newText = text.replace(/MICROSOFT/g, "W3Schools");
+// g for global (all matches)
+```
+
+Or you can combine them both as well:
+
+```jsx
+let text = "Please visit Microsoft and Microsoft!";
+let newText = text.replace(/MICROSOFT/gi, "W3Schools");
+```
+
+## String Search Methods
+
+- String indexOf()
+- String lastIndexOf()
+- String search()
+- String match()
+- String matchAll()
+- String includes()
+- String startsWith()
+- String endsWith()
+
+<aside>
+💡 The two methods, `indexOf()` and `search()`, are **not** **equal.** 
+Because `indexOf()` can take two arguments. ****
+
+</aside>
+
+In search `regex` can be used.
+
+```jsx
+let x = 10;
+let y = 20;
+let z = "30";
+let result = x + y + z; // 3030 not 102030
+```
