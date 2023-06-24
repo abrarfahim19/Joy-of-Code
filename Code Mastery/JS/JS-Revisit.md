@@ -200,3 +200,77 @@ let y = 20;
 let z = "30";
 let result = x + y + z; // 3030 not 102030
 ```
+
+## Number
+
+`NaN` is a typeof “number”. When number is divided by string it throws `NaN`.
+
+```jsx
+let x = 100 / "Apple";
+isNaN(x);
+```
+
+`infinity` is a typeof “number”. When number is outside possible number it shows `infinity`.
+
+```jsx
+let myNumber = 2;
+// Execute until Infinity
+while (myNumber != Infinity) {
+  myNumber = myNumber * myNumber;
+}
+```
+
+Convert number to different base.
+
+```jsx
+let myNumber = 32;
+myNumber.toString(32);
+myNumber.toString(16);
+myNumber.toString(12);
+myNumber.toString(10);
+myNumber.toString(8);
+myNumber.toString(2);
+```
+
+## BigInt
+
+The JavaScript `typeof` a `BigInt` is "bigint". JavaScript integers are only accurate up to 15 digits:
+
+To call bigInt add n at the end of a number;
+
+```jsx
+let x = 9999999999999999;
+let y = 9999999999999999n;
+```
+
+or call `bigInt()`
+
+```jsx
+let x = 1234567890123456789012345n;
+let y = BigInt(1234567890123456789012345)
+```
+
+With `BigInt` the total number of supported data types in JavaScript is 8:
+
+1. String
+
+2. Number
+
+3. Bigint
+
+4. Boolean
+
+5. Undefined
+
+6. Null
+
+7. Symbol
+
+8. Object
+
+```jsx
+let x = Number.MAX_SAFE_INTEGER;
+let x = Number.MIN_SAFE_INTEGER;
+Number.isInteger(10.5);
+Number.isSafeInteger(12345678901234567890);
+```
