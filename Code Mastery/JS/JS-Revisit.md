@@ -274,3 +274,164 @@ let x = Number.MIN_SAFE_INTEGER;
 Number.isInteger(10.5);
 Number.isSafeInteger(12345678901234567890);
 ```
+
+## Number Methods
+
+| Method | Description |
+| --- | --- |
+| toString() | Returns a number as a string |
+| toExponential() | Returns a number written in exponential notation |
+| toFixed() | Returns a number written with a number of decimals |
+| toPrecision() | Returns a number written with a specified length |
+| ValueOf() | Returns a number as a number |
+
+```jsx
+let x = new Number(10);
+x.valueOf();
+```
+
+| Method | Description |
+| --- | --- |
+| Number() | Returns a number converted from its argument. |
+| parseFloat() | Parses its argument and returns a floating point number |
+| parseInt() | Parses its argument and returns a whole number |
+
+## **Number Properties**
+
+| Property | Description |
+| --- | --- |
+| EPSILON | The difference between 1 and the smallest number > 1. |
+| MAX_VALUE | The largest number possible in JavaScript |
+| MIN_VALUE | The smallest number possible in JavaScript |
+| MAX_SAFE_INTEGER | The maximum safe integer (253 - 1) |
+| MIN_SAFE_INTEGER | The minimum safe integer -(253 - 1) |
+| POSITIVE_INFINITY | Infinity (returned on overflow) |
+| NEGATIVE_INFINITY | Negative infinity (returned on overflow) |
+| NaN | A "Not-a-Number" value |
+
+## Array
+
+<aside>
+💡 Arrays are a special type of objects. The `typeof` operator in JavaScript returns "object" for arrays.
+
+</aside>
+
+**Getting value of Array**
+
+```jsx
+const person = ["John", "Doe", 46];
+person[1]; // Doe
+```
+
+**Getting value of Object**
+
+```jsx
+const person = {firstName:"John", lastName:"Doe", age:46};
+person.lastName; // Doe
+```
+
+**Array Elements Can Be Objects**
+
+```jsx
+myArray[0] = Date.now;   // Date Object
+myArray[1] = myFunction; // Function
+myArray[2] = myCars;     // object
+```
+
+<aside>
+💡 JavaScript does **not** support arrays with named indexes. In JavaScript, **arrays** always use **numbered indexes**.
+
+</aside>
+
+Follow the code bellow it will generate error:
+
+```jsx
+const person = [];
+person["firstName"] = "John";
+person["lastName"] = "Doe";
+person["age"] = 46;
+person.length;     // Will return 0
+person[0];         // Will return undefined
+```
+
+**Difference between array and object**
+
+| Array | Object |
+| --- | --- |
+| Array use numbered index | Object use named index |
+| use arrays when you want the element names to be numbers. | use objects when you want the element names to be strings (text). |
+
+**new Array Object creation in JavaScript**
+
+```jsx
+const points = new Array(40); // Array with 40 empty value.
+const points = [40];          // Array with a value 40
+```
+
+`array` and `object` they both returns typeof ‘`object`’ so in order to identify an array we can do is this:
+
+```jsx
+const fruits = ["Banana", "Orange", "Apple"];
+Array.isArray(fruits);    // true
+fruits instanceof Array;  // true
+```
+
+### Array Methods
+
+| Method | Details |
+| --- | --- |
+| Array length | returns the length of the array. |
+| Array toString() | returns the string representation. |
+| Array pop() | removes and returns the last element of the array. |
+| Array push() | adds the `value` as the last element of the array and returns the new length of array. |
+| Array shift() | removes and returns the first element of the array. |
+| Array unshift() | adds the `value` as the first element of the array and returns the new length of array. |
+| Array join()
+ | returns an array as a string and a separator can be specified ex. array.join(separator). |
+| Array delete() | delete leaves undefined holes in the array. |
+| Array concat() | creates a new array by merging (concatenating) existing arrays and returns the new Array. |
+| Array flat() | reduce the dimensionality of an array. |
+| Array splice() | add new items to an array or remove items from the array ex. fruits.splice(p, q, "y", "x"); |
+| Array slice() | creates a new array doesn’t remove any element from the array. |
+
+### Sort Array
+
+The `sort()` method sorts an array alphabetically so 100 is smaller than 2 that’s where compare function comes in.
+
+```jsx
+const points = [40, 100, 1, 5, 25, 10];
+points.sort(function(a, b){return a - b}); // sort in ascending order
+points.sort(function(a, b){return b - a}); // sort in descending order
+```
+
+### Sorting in Random Order (might favor some number over other)
+
+```jsx
+const points = [40, 100, 1, 5, 25, 10];
+points.sort(function(){return 0.5 - Math.random()});
+```
+
+### **The Fisher Yates Method**
+
+```jsx
+const points = [40, 100, 1, 5, 25, 10];
+
+for (let i = points.length -1; i > 0; i--) {
+  let j = Math.floor(Math.random() * (i+1));
+  let k = points[i];
+  points[i] = points[j];
+  points[j] = k;
+}
+```
+
+### Find Max and Min
+
+```jsx
+function myArrayMax(arr) {
+  return Math.max.apply(null, arr);
+}
+
+function myArrayMin(arr) {
+  return Math.min.apply(null, arr);
+}
+```
