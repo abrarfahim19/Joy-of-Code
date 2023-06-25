@@ -435,3 +435,7 @@ function myArrayMin(arr) {
   return Math.min.apply(null, arr);
 }
 ```
+
+<aside>
+💡 The fastest solution is to use a "home made" method. [ *i.e. looping and reassigning the min/max value* ]
+</aside>
