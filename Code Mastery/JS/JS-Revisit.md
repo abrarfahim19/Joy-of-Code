@@ -439,3 +439,57 @@ function myArrayMin(arr) {
 <aside>
 💡 The fastest solution is to use a "home made" method. [ *i.e. looping and reassigning the min/max value* ]
 </aside>
+
+### Home Made Solution for Max:
+
+```jsx
+function myArrayMax(arr) {
+  let len = arr.length;
+  let max = -Infinity;
+  while (len--) {
+    if (arr[len] > max) {
+      max = arr[len];
+    }
+  }
+  return max;
+}
+```
+
+### Sorting Object
+
+The trick is to use a compare function for values:
+
+```jsx
+arr.sort(function(a,b){return a.value - b.value})
+```
+
+Comparing the string can be a little bit tricky:
+
+```jsx
+arr.sort(
+    function(a,b){
+        return a.keyName.toLowerCase() - b.keyName.toLowerCase()
+    }
+)
+```
+
+Welp! not that tricky actually.
+
+### **Stable Array sort()**
+
+Before ES2019, the **`sort()`** method in JavaScript did not guarantee a stable sorting algorithm. This means that when sorting elements based on a specific value, elements with the same value were not guaranteed to maintain their original relative positions in the sorted array.
+
+*Example*
+
+```jsx
+const myArr = [
+  {name: "X00", price: 100},
+  {name: "X01", price: 100},
+  {name: "X02", price: 100},
+  {name: "X03", price: 100},
+  {name: "X04", price: 110},
+  {name: "X05", price: 110},
+  {name: "X06", price: 110},
+  {name: "X07", price: 110}
+];
+```
