@@ -493,3 +493,44 @@ const myArr = [
   {name: "X07", price: 110}
 ];
 ```
+
+## Array Iteration:
+
+### forEach()
+
+forEach takes a callback function and executes for each element of the array
+
+```jsx
+const num = [1,2,3,4,5];
+let txt = "";
+
+num.forEach(myfunc); // Takes callback func myFunc
+
+function myFunc(value,index,array){
+    txt += value + "<br>";
+};
+```
+
+<aside>
+💡 The callback function takes three arguments:
+**1. value,
+2. index,
+3. Array**
+
+</aside>
+
+### map
+
+The `map()` method creates a new array by performing a function on each array element.
+
+The `map()` method does not execute the function for array elements without values.
+
+The `map()` method does not change the original array
+
+```jsx
+const num = [1,2,3,4,5];
+const newNum = num.map(doubleIt);
+const doubleIt = (value,index,arr) => {
+    return value*2;
+}
+```
