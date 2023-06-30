@@ -519,7 +519,7 @@ function myFunc(value,index,array){
 
 </aside>
 
-### map
+### map()
 
 The `map()` method creates a new array by performing a function on each array element.
 
@@ -532,5 +532,74 @@ const num = [1,2,3,4,5];
 const newNum = num.map(doubleIt);
 const doubleIt = (value,index,arr) => {
     return value*2;
+}
+```
+
+### flatMap
+
+The **`flatMap()`** method also transforms each element of an array based on a provided callback function, but it flattens the resulting array
+
+```jsx
+const num = [1,2];
+
+const newNum = num.map(doubleIt);       // [[1,2],[1,2]]
+const newNum = num.flatMap(doubleIt);   // [1,2,1,2]
+
+const doubleIt = (value,index,arr) => {
+    return arr;
+}
+```
+
+### filter()
+
+The `filter()` method creates a *new array* with array elements that pass a test.
+
+```jsx
+const num = [1,2,3,4];
+
+const newNum = num.filter(oddNum);
+
+function oddNum(value, index, array){
+	if (value%2 == 1){
+		return true;
+	}
+}
+```
+
+### reducer()
+
+The `reduce()` method runs a function on each array element to produce (reduce it to) a single value.
+
+```jsx
+const num = [1,2,3,4,5];
+
+const total = num.reduce(getTotal);
+
+function getTotal(total, value, index, array){
+	return total + value;
+}
+```
+
+The *reduce* function can also take up a initial value:
+
+```jsx
+const total = num.reduce(getTotal, 100);
+```
+
+### reduceRight()
+
+This function `reduceRight()` works right to left. Also can take up an initial value:
+
+### every()
+
+The function `every()` takes up a function and checks the function against each value and returns true if all of the value satisfies the functions value.
+
+```jsx
+const num = [10,20,30,40,50];
+
+let isTrue = num.every(greaterThanTwenty);
+
+function greaterThanTwenty(value, index, array){
+	return value > 20;
 }
 ```
