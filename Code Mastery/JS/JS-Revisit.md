@@ -603,3 +603,141 @@ function greaterThanTwenty(value, index, array){
 	return value > 20;
 }
 ```
+
+### some()
+
+The function `some()` takes up a function and checks the function against each value and returns true if some of the value satisfies the functions value.
+
+```jsx
+const num = [10,20,30,40,50];
+
+let isTrue = num.some(greaterThanTwenty);
+
+function greaterThanTwenty(value, index, array){
+	return value > 20;
+}
+```
+
+### indexOf()
+
+The `indexOf()` method searches an array for an element value and returns its position.
+
+```jsx
+const fruits = ["Apple","Banana","Grape","Strawberry","Grape"];
+
+const position = fruits.indexOf("Grape"); //2
+```
+
+syntax:
+
+*indexOf( item, start )*
+
+### lastIndexOf()
+
+The `lastIndexOf()` method searches an array for an element value and returns its position. *from last*
+
+```jsx
+const fruits = ["Apple","Banana","Grape","Strawberry","Grape"];
+
+const position = fruits.indexOf("Grape"); //4
+```
+
+syntax:
+
+*lastIndexOf( item, start )*
+
+### find()
+
+The `find()` method returns the value of the first array element that passes a test function.
+
+```jsx
+const number = [1,23,15,37,8,16,12];
+
+const firstEvenNumber = number.find(evenNumber);
+
+function evenNumber(value,index,array) {
+	return value%2 === 1;
+}
+```
+
+### findIndex()
+
+The `findIndex()` method returns the index of the first array element that passes a test function.
+
+```jsx
+const number = [1,23,15,37,8,16,12];
+
+const postitonOfFirstEvenNumber = number.findIndex(evenNumber);
+
+function evenNumber(value,index,array) {
+	return value%2 === 1;
+}
+```
+
+### Array.from(******ObjectWithLength******)
+
+The `Array.from()` method returns An array from an object that has length.
+
+```jsx
+const name = "ABRAR";
+
+Array.from(name);      // ["A","B","R","A","R"]
+```
+
+### Array.keys()
+
+The `Array.keys()` method returns an *iterator* from an object with the keys of an object.
+
+```jsx
+const name = ["Abrar", "Fahim", "Patwari"];
+
+const myKeys = name.keys();
+
+for (let key of myKeys){
+	console.log(key);      //0 1 2
+}
+```
+
+### Array.entries()
+
+The `Array.entries()` method returns an *iterator* from an object with the key/value pair of an object.
+
+```jsx
+const name = ["Abrar", "Fahim", "Patwari"];
+
+const myKeys = name.entries();
+
+for (let key of myKeys){
+	console.log(key);     // [0,"Abrar"] [1,"Fahim"] [2,"Patwari"]
+}
+```
+
+### Array.includes()
+
+The `Array.includes()` method returns true if the element is present in the array.
+
+```jsx
+const data = [NaN, 1, 2, 3 , "Grape"];
+
+const doesExist = data.indexOf(NaN);     // -1
+const doesExist = data.includes(NaN);    // true
+```
+
+<aside>
+💡 It allows check for NaN values
+
+</aside>
+
+### Array Spread …
+
+The `Array Spread ...` spreads an array elements
+
+```jsx
+const first = [1,2,3,4,5];
+const second = [6,7,8,9,10];
+const third = [11,12,13,14,15];
+
+const numbers = [...first, ...second, ...third];
+
+// [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+```
