@@ -838,4 +838,189 @@ const d = new Date(msec);
 | https://www.w3schools.com/jsref/jsref_tanh.asp | Returns the hyperbolic tangent of a number |
 | https://www.w3schools.com/jsref/jsref_trunc.asp | Returns the integer part of a number (x) |
 
+### A Proper Random Function
 
+The following function will give a random number between min and max
+
+```jsx
+function rangedRandom (min, max){
+	return Math.floor(Math.random()*(max - min + 1))+min
+}
+```
+
+### Boolean
+
+The   `new Boolean(true/false)`   can be used to create a Boolean object but it is not recommended since it slows down the execution and adds complexity in the code base.
+
+Moreover comparing two js object always returns false.
+
+```jsx
+let x = new Boolean(true);
+let y = new Boolean(true);
+x == y                     // false
+x === y                    // false
+```
+
+### Truthy vs Falsy values in JS
+
+Following are the list of truthy and falsy values in javascript:
+
+| Truthy Values | Falsy Values |
+| --- | --- |
+| true | false |
+| non-zero numbers (e.g., 1, -1) | 0 |
+| non-empty strings | empty string ('') |
+| non-empty arrays | empty array ([]) |
+| non-empty objects | null |
+| functions | undefined |
+| instances of classes | NaN (Not a Number) |
+| Any other value not listed in the falsy column |  |
+
+## Conditions
+
+### Ternary Operator
+
+The ternary operator returns value based on condition
+
+```jsx
+let value1 = x;
+let value2 = y;
+let variablename = (condition) ? value1 : value2;
+```
+
+### Nullish Coalescing Operator
+
+The   `??`   operator returns the first argument if the value is not null otherwise the second argument.
+
+```jsx
+let first = null;
+let second = "Value";
+let result = first ?? second;   // result => second
+```
+
+### Optional Chaining Operator
+
+The   `?.`   returns  `undefined`  or  `null`  instead of throwing error:
+
+```jsx
+let x = person?.name;
+```
+
+### if-elseif-else
+
+The syntax is as follows
+
+```jsx
+if (condition1) {
+  //  block of code to be executed if condition1 is true
+} else if (condition2) {
+  //  block of code to be executed if the condition1 is false and condition2 is true
+} else {
+  //  block of code to be executed if the condition1 is false and condition2 is false
+}
+```
+
+### Switch Case
+
+The  `switch`  case:
+
+1. If multiple cases are found it will execute the first case first
+2. If no case is found the default case is executed
+3. If the default case is neither found then the program continues after the switch statement.
+
+```jsx
+let x = "0";
+switch (x) {
+  case 0:
+    text = "Off";
+    break;
+  case 1:
+    text = "On";
+    break;
+  default:
+    text = "No value found";
+}
+```
+
+<aside>
+💡 The `switch` case use the `===` that means the case value and type both needs to match.
+
+</aside>
+
+## Loop
+
+JavaScript supports different kinds of loops:
+
+- `for` - loops through a block of code a number of times
+- `for/in` - loops through the properties of an object
+- `for/of` - loops through the values of an iterable object
+- `while` - loops through a block of code while a specified condition is true
+- `do/while` - also loops through a block of code while a specified condition is true
+
+### For
+
+The `for loop` does this
+
+```jsx
+for (expression 1; expression 2; expression 3) {
+  // code block to be executed
+}
+```
+
+The `for loop` has block scope. *[if let is used instead of var]*
+
+### For In
+
+The JavaScript `for in` statement loops through the properties of an Object:
+
+```jsx
+for (key in object){
+	console.log(object[key], "is ", key)
+}
+```
+
+The JavaScript `for in` loop can loop through Array as well. But it is not recommended.
+
+### For Of
+
+The JavaScript `for of` statement loops through the values of an iterable object.
+
+If an object provides object[******************Symbol.iterator]****************** function then, that can be used to loop with the `for of`  loop
+
+```jsx
+const array = [1, 2, 3];
+if (typeof array[Symbol.iterator] === 'function') {
+  console.log('Array provides Symbol.iterator');
+} else {
+  console.log('Array does not provide Symbol.iterator');
+}
+```
+
+The implementation is as follows:
+
+```jsx
+for (each of array){
+	console.log(each);
+}
+```
+
+### While Loop
+
+The `while` loop loops through a block of code as long as a specified condition is true.
+
+```jsx
+while (condition) {
+  // code block to be executed
+}
+```
+
+### Do While Loop
+
+The `do while` loop is a variant of the while loop. This loop will execute the code block once, before checking if the condition is true, then it will repeat the loop as long as the condition is true.
+
+```jsx
+do {
+  // code block to be executed
+}
+while (condition);
+```
