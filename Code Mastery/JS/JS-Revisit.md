@@ -741,3 +741,101 @@ const numbers = [...first, ...second, ...third];
 
 // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
 ```
+
+### Arrays are not constants
+
+The   `Array`   are not constant. When we declare it with *const* we declare that the array reference is a const. That cannot be changed. *i.e.* we can update the array with push, pop or reassigning the value
+
+```jsx
+let x = [1,2,3];
+x.push(value);
+
+```
+
+### Array has block scope
+
+```jsx
+const fruits = ["Apple", "Banana"];
+{
+	const fruits = ["Grape", "Strawberry"];
+}
+```
+
+## Date
+
+### parse date
+
+The `Date.parse()` converts a valid time string to milliseconds.
+
+```jsx
+let msec = Date.parse("March 21, 2012");
+```
+
+### convert millisecond to valid date
+
+The `new Date()` will convert this milliseconds back to the date string.
+
+```jsx
+const d = new Date(msec);
+```
+
+### Date Get Methods
+
+| Method | Description |
+| --- | --- |
+| getFullYear() | Get year as a four digit number (yyyy) |
+| getMonth() | Get month as a number (0-11) |
+| getDate() | Get day as a number (1-31) |
+| getDay() | Get weekday as a number (0-6) |
+| getHours() | Get hour (0-23) |
+| getMinutes() | Get minute (0-59) |
+| getSeconds() | Get second (0-59) |
+| getMilliseconds() | Get millisecond (0-999) |
+| getTime() | Get time (milliseconds since January 1, 1970) |
+
+### Date Set Methods
+
+| Method | Description |
+| --- | --- |
+| setDate() | Set the day as a number (1-31) |
+| setFullYear() | Set the year (optionally month and day) |
+| setHours() | Set the hour (0-23) |
+| setMilliseconds() | Set the milliseconds (0-999) |
+| setMinutes() | Set the minutes (0-59) |
+| setMonth() | Set the month (0-11) |
+| setSeconds() | Set the seconds (0-59) |
+| setTime() | Set the time (milliseconds since January 1, 1970) |
+
+### JS Math Methods
+
+| Method | Description |
+| --- | --- |
+| https://www.w3schools.com/jsref/jsref_abs.asp | Returns the absolute value of x |
+| https://www.w3schools.com/jsref/jsref_acos.asp | Returns the arccosine of x, in radians |
+| https://www.w3schools.com/jsref/jsref_acosh.asp | Returns the hyperbolic arccosine of x |
+| https://www.w3schools.com/jsref/jsref_asin.asp | Returns the arcsine of x, in radians |
+| https://www.w3schools.com/jsref/jsref_asinh.asp | Returns the hyperbolic arcsine of x |
+| https://www.w3schools.com/jsref/jsref_atan.asp | Returns the arctangent of x as a numeric value between -PI/2 and PI/2 radians |
+| https://www.w3schools.com/jsref/jsref_atan2.asp | Returns the arctangent of the quotient of its arguments |
+| https://www.w3schools.com/jsref/jsref_atanh.asp | Returns the hyperbolic arctangent of x |
+| https://www.w3schools.com/jsref/jsref_cbrt.asp | Returns the cubic root of x |
+| https://www.w3schools.com/jsref/jsref_ceil.asp | Returns x, rounded upwards to the nearest integer |
+| https://www.w3schools.com/jsref/jsref_cos.asp | Returns the cosine of x (x is in radians) |
+| https://www.w3schools.com/jsref/jsref_cosh.asp | Returns the hyperbolic cosine of x |
+| https://www.w3schools.com/jsref/jsref_exp.asp | Returns the value of Ex |
+| https://www.w3schools.com/jsref/jsref_floor.asp | Returns x, rounded downwards to the nearest integer |
+| https://www.w3schools.com/jsref/jsref_log.asp | Returns the natural logarithm (base E) of x |
+| https://www.w3schools.com/jsref/jsref_max.asp | Returns the number with the highest value |
+| https://www.w3schools.com/jsref/jsref_min.asp | Returns the number with the lowest value |
+| https://www.w3schools.com/jsref/jsref_pow.asp | Returns the value of x to the power of y |
+| https://www.w3schools.com/jsref/jsref_random.asp | Returns a random number between 0 and 1 |
+| https://www.w3schools.com/jsref/jsref_round.asp | Rounds x to the nearest integer |
+| https://www.w3schools.com/jsref/jsref_sign.asp | Returns if x is negative, null or positive (-1, 0, 1) |
+| https://www.w3schools.com/jsref/jsref_sin.asp | Returns the sine of x (x is in radians) |
+| https://www.w3schools.com/jsref/jsref_sinh.asp | Returns the hyperbolic sine of x |
+| https://www.w3schools.com/jsref/jsref_sqrt.asp | Returns the square root of x |
+| https://www.w3schools.com/jsref/jsref_tan.asp | Returns the tangent of an angle |
+| https://www.w3schools.com/jsref/jsref_tanh.asp | Returns the hyperbolic tangent of a number |
+| https://www.w3schools.com/jsref/jsref_trunc.asp | Returns the integer part of a number (x) |
+
+
