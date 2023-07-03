@@ -1024,3 +1024,192 @@ do {
 }
 while (condition);
 ```
+
+### Label (Break and Continue)
+
+Label can be used to break out of a loop or scope in javascript. Following is a label in javascript: 
+
+```jsx
+alabel:{
+    console.log("Abrar");
+    blabel:{
+        for (let i = 0; i <5; i++){
+            if (i==4){
+                console.log("Breaking blabel")
+                break blabel
+            };
+            console.log("Fahim")
+        }    
+    }
+    console.log("Breaking alabel");
+    break alabel;
+}
+```
+
+## Sets
+
+| Method | Description |
+| --- | --- |
+| new Set() | Creates a new Set |
+| add() | Adds a new element to the Set |
+| delete() | Removes an element from a Set |
+| has() | Returns true if a value exists in the Set |
+| forEach() | Invokes a callback for each element in the Set |
+| values() | Returns an iterator with all the values in a Set |
+
+| Property | Description |
+| --- | --- |
+| size | Returns the number of elements in a Set |
+
+Three ways a set can be created:
+
+1. Passing an array inside the `new Set()`
+2. Adding values.
+3. Adding variables. 
+
+```jsx
+const fruits = new Set(["Apple", "Banana", "Grape"])
+```
+
+## Map
+
+A Map holds key-value pairs where the keys can be any datatype.
+
+A Map remembers the original insertion order of the keys.
+
+| Method | Description |
+| --- | --- |
+| new Map() | Creates a new Map |
+| set() | Sets the value for a key in a Map |
+| get() | Gets the value for a key in a Map |
+| delete() | Removes a Map element specified by the key |
+| has() | Returns true if a key exists in a Map |
+| forEach() | Calls a function for each key/value pair in a Map |
+| entries() | Returns an iterator with the [key, value] pairs in a Map |
+| Property | Description |
+| size | Returns the number of elements in a Map |
+
+Two ways a `Map` can be set:
+
+1. create new Map
+2. set data on empty map.
+
+```jsx
+const fruits = new Map([
+  [[1,"apples"], 500, "a"],
+  [[2,"bananas"], 300, "b"],
+  [[3,"oranges"], 200, "c"]
+]);
+```
+
+## typeof type
+
+In JavaScript there are 5 different data types that can contain values:
+
+1. `string`
+2. `number`
+3. `boolean`
+4. `object`
+5. `function`
+
+There are 6 types of objects:
+
+1. `Object`
+2. `Date`
+3. `Array`
+4. `String`
+5. `Number`
+6. `Boolean`
+
+And 2 data types that cannot contain values:
+
+1. `null`
+2. `undefined`
+
+### null == undefined
+
+### null ! == undefined
+
+```jsx
+typeof "John"                 // Returns "string"
+typeof 3.14                   // Returns "number"
+typeof NaN                    // Returns "number"
+typeof false                  // Returns "boolean"
+typeof [1,2,3,4]              // Returns "object"
+typeof {name:'John', age:34}  // Returns "object"
+typeof new Date()             // Returns "object"
+typeof function () {}         // Returns "function"
+typeof myCar                  // Returns "undefined" *
+typeof null                   // Returns "object"
+```
+
+Notice the following:
+
+- The data type of NaN is number
+- The data type of an array is **object**
+- The data type of a date is **object**
+- The data type of null is **object**
+- The data type of an undefined variable is **undefined** *
+- The data type of a variable that has not been assigned a value is also **undefined** *
+
+<aside>
+💡 `null` should be a null type but it is object. Now how do we know if an `array`  is an `array` and same for the `date` ?
+
+</aside>
+
+### Primitive Data Type
+
+The `typeof` operator can return one of these primitive types:
+
+1. `string`
+2. `number`
+3. `boolean`
+4. `undefined`
+
+### Complex Data Type
+
+The `typeof` operator can return one of two complex types:
+
+1. `function`
+2. `object`
+
+<aside>
+💡 `typeof typeof` is string.
+
+</aside>
+
+### Type Check (object/Array)
+
+To check weather an array is array:
+
+```jsx
+function isArray(item){
+	return item.constructor == Array;
+}
+
+function isDate(item){
+	return item.constructor == Date;
+}
+```
+
+### instanceof  Operator
+
+The instanceof operator returns true if X is instance of Y
+
+```jsx
+const cars = ["Saab", "Volvo", "BMW"];
+
+(cars instanceof Array);
+(cars instanceof Object);
+(cars instanceof String);
+(cars instanceof Number);
+```
+
+### void operator
+
+returns `undefined` .
+
+```jsx
+<a href="javascript:void(0);">Useless link</a> // Explicitly executes JS code
+<a href="">Useless link</a>                    // Doesn't do anything
+```
