@@ -1213,3 +1213,73 @@ returns `undefined` .
 <a href="javascript:void(0);">Useless link</a> // Explicitly executes JS code
 <a href="">Useless link</a>                    // Doesn't do anything
 ```
+
+## JavaScript Type Conversion
+
+- Converting Strings to Numbers
+- Converting Numbers to Strings
+- Converting Dates to Numbers
+- Converting Numbers to Dates
+- Converting Booleans to Numbers
+- Converting Numbers to Booleans
+
+| Method | Description |
+| --- | --- |
+| Number() | Returns a number, converted from its argument |
+| parseFloat() | Parses a string and returns a floating point number |
+| parseInt() | Parses a string and returns an integer |
+
+| Method | Description |
+| --- | --- |
+| String() | Returns a string, converted from its argument |
+| toString() | Converts a number to string |
+
+| Method | Description |
+| --- | --- |
+| toExponential() | Returns a string, with a number rounded and written using exponential notation. |
+| toFixed() | Returns a string, with a number rounded and written with a specified number of decimals. |
+| toPrecision() | Returns a string, with a number written with a specified length |
+
+### Converting Date and String
+
+```jsx
+const d = new Date(123123123123)
+
+d.getTime()
+d.toString()
+```
+
+### Converting Boolean and String
+
+```jsx
+const d = true;
+
+String(d);
+true.toString();
+
+```
+
+| Original Value | Converted to Number | Converted to String | Converted to Boolean |
+| --- | --- | --- | --- |
+| false | 0 | "false" | false |
+| true | 1 | "true" | true |
+| 0 | 0 | "0" | false |
+| 1 | 1 | "1" | true |
+| "0" | 0 | "0" | true |
+| "000" | 0 | "000" | true |
+| "1" | 1 | "1" | true |
+| NaN | NaN | "NaN" | false |
+| Infinity | Infinity | "Infinity" | true |
+| -Infinity | -Infinity | "-Infinity" | true |
+| "" | 0 | "" | false |
+| "20" | 20 | "20" | true |
+| "twenty" | NaN | "twenty" | true |
+| [ ] | 0 | "" | true |
+| [20] | 20 | "20" | true |
+| [10,20] | NaN | "10,20" | true |
+| ["twenty"] | NaN | "twenty" | true |
+| ["ten","twenty"] | NaN | "ten,twenty" | true |
+| function(){} | NaN | "function(){}" | true |
+| { } | NaN | "[object Object]" | true |
+| null | 0 | "null" | false |
+| undefined | NaN | "undefined" | false |
