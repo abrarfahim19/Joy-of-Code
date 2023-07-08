@@ -1283,3 +1283,66 @@ true.toString();
 | { } | NaN | "[object Object]" | true |
 | null | 0 | "null" | false |
 | undefined | NaN | "undefined" | false |
+
+## Regular Expression
+
+A regular expression is a sequence of characters that forms a **search pattern**.
+
+**Syntax**
+
+<aside>
+💡 /pattern/modifiers;
+
+</aside>
+
+In JS regex is used with two string method:
+
+1. search()
+2. replace()
+
+### Regular Expression Modifier
+
+<aside>
+💡 **Modifiers** can be used to perform case-insensitive more global searches:
+
+</aside>
+
+| Modifier | Description |
+| --- | --- |
+| i | Perform case-insensitive matching |
+| g | Perform a global match (find all matches rather than stopping after the first match) |
+| m | Perform multiline matching |
+
+<aside>
+💡 **Brackets** are used to find a range of characters:
+
+</aside>
+
+| Expression | Description |
+| --- | --- |
+| [abc] | Find any of the characters between the brackets |
+| [0-9] | Find any of the digits between the brackets |
+| (x|y) | Find any of the alternatives separated with | |
+
+<aside>
+💡 **Metacharacters** are characters with a special meaning:
+
+</aside>
+
+| Metacharacter | Description |
+| --- | --- |
+| \d | Find a digit |
+| \s | Find a whitespace character |
+| \b | Find a match at the beginning of a word like this: \bWORD, or at the end of a word like this: WORD\b |
+| \uxxxx | Find the Unicode character specified by the hexadecimal number xxxx |
+
+<aside>
+💡 **Quantifiers** define quantities:
+
+</aside>
+
+| Quantifier | Description |
+| --- | --- |
+| n+ | Matches any string that contains at least one n |
+| n* | Matches any string that contains zero or more occurrences of n |
+| n? | Matches any string that contains zero or one occurrences of n |
