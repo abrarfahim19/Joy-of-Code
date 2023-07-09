@@ -1346,3 +1346,21 @@ In JS regex is used with two string method:
 | n+ | Matches any string that contains at least one n |
 | n* | Matches any string that contains zero or more occurrences of n |
 | n? | Matches any string that contains zero or one occurrences of n |
+
+### test()
+
+The `test()` returns true if the string contains the pattern.
+
+```jsx
+let text = "There is no charge for the real awesomeness or the attractiveness!";
+/some/.test(text);
+```
+
+### exec()
+
+The `exec()` method returns the part that matches with the pattern. If nothing matches it returns empty object
+
+```jsx
+let text = "There is no charge for the real awesomeness or the attractiveness!";
+/some/.exec(text);
+```
