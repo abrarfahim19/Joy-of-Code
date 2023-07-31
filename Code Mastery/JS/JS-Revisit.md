@@ -1364,3 +1364,152 @@ The `exec()` method returns the part that matches with the pattern. If nothing 
 let text = "There is no charge for the real awesomeness or the attractiveness!";
 /some/.exec(text);
 ```
+## Try, Catch, Finally, Throw
+
+The `try` statement tries to execute a block
+
+The `catch` statement catches any error that was faced in the `try` block
+
+The `finally` statement executes regardless of any case
+
+The `throw` statement defines a new Error
+
+An interesting fact about finally is shown bellow:
+
+```jsx
+function sample() {
+  try {
+    console.log("This is Try");
+    return 10
+  } finally {
+    console.log("This is Finally");
+    return 20
+  }
+}
+```
+
+<aside>
+💡 The reason `20` is returned before `10` is, finally block executes before `return, throw, break, continue`
+
+</aside>
+
+The following code is another interesting case of the `try, catch` block
+
+```jsx
+function sample() {
+  try {
+      setTimeout(function(){
+        console.log("This is Try");
+        errorvariable; // Should throw an error
+      }, 1000)
+  } catch(error) {
+    console.log("Inside catch",error);
+  }
+}
+```
+
+### Error Object Properties
+
+| Property | Description |
+| --- | --- |
+| name | Sets or returns an error name |
+| message | Sets or returns an error message (a string) |
+
+### Error Name Values
+
+Six different values can be returned by the error name property:
+
+| Error Name | Description |
+| --- | --- |
+| EvalError | An error has occurred in the eval() function |
+| RangeError | A number "out of range" has occurred |
+| ReferenceError | An illegal reference has occurred |
+| SyntaxError | A syntax error has occurred |
+| TypeError | A type error has occurred |
+| URIError | An error in encodeURI() has occurred |
+
+## Scope
+
+JS has three types of scope
+
+1. Block Scope
+2. Function Scope
+3. Global Scope
+
+### Block Scope
+
+variable declared with `var` doesn’t have block scope
+
+### Function Scope
+
+Variable declared within the function becomes local variable of the function. It is not accessible to the outside of the scope.
+
+### Global Scope
+
+Variable declared outside of function has global scope. It is accessible in the function scope as well.
+
+<aside>
+💡 variable that has not been declared, if it is assigned inside a function becomes available globally automatically.
+
+</aside>
+
+```jsx
+myFunction();
+console.log("Car Name is: ", carName);
+function myFunction(){
+	carName = "Tesla"
+}
+```
+
+### Function Arguments
+
+A function arguments work as local variable inside a function.
+
+### Global Variable in HTML
+
+In `HTML` the global variable is the `window` object.
+
+Any global variable created with `var` becomes a global variable.
+
+Any global variable created with `let/const` does not become a global variable.
+
+<aside>
+💡 It is recommended to not create a global variable. Because of conflict.
+
+</aside>
+
+### Lifetime of a JS variable
+
+In JS a variable lifetime starts when it is declared. And in a function it ends as the function completes execution.
+
+- In web browser global variables are deleted when the browser window is closed.
+
+## Hoisting
+
+Hoisting is JavaScript's default behavior of moving declarations to the top.
+
+<aside>
+💡 Only Declarations are hoisted not Initialization
+
+</aside>
+
+******************************Reference Error******************************
+
+```jsx
+carName = "Volvo";
+let carName;
+```
+
+************Syntax Error************
+
+```jsx
+carName = "Tesla";
+const carName;
+```
+
+****************Hoisting****************
+
+```jsx
+carName = "Tesla";
+var caName;
+```
