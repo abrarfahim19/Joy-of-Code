@@ -1513,3 +1513,40 @@ const carName;
 carName = "Tesla";
 var caName;
 ```
+
+## Strict Mode
+
+In strict mode, any assignment to a non-writable property, a getter-only property, a non-existing property, a non-existing variable, or a non-existing object, will throw an error.
+
+What’s not available to use before declaration.
+
+1. Variable
+2. Object
+3. Function (Deleting and duplicating the parameter)
+
+```jsx
+let x = 010; // Octal numeric literals
+let x = "\010"; // Octal escape characters
+
+Object.defineProperty(obj, "x", {value:0, writable:false});
+obj.x = 3.14;            // writting to readonly property
+
+const obj = {get x() {return 0} };
+obj.x = 3.14;            // writting to getonly property
+
+delete Object.prototype; // Deleting undeltable object
+```
+
+The `this` keyword in functions behaves differently in strict mode.
+
+The `this` keyword refers to the object that called the function.
+
+If the object is not specified, functions in strict mode will return `undefined` and functions in normal mode will return the global object (window):
+
+```jsx
+"use strict";
+function myFunction() {
+  alert(this); // will alert "undefined"
+}
+myFunction();
+```
