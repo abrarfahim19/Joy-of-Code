@@ -70,16 +70,21 @@ BigInt can store bigger number than that.
 ## Function
 
 ```jsx
-function arguments(parameter1, parameter2, parameter3){
-	console.log(argumnents);
-	return parmeter1;
+function arguments(parameter1, parameter2, parameter3) {
+  console.log(argumnents);
+  return parmeter1;
 }
 ```
 
 ## Object
 
 ```jsx
-const person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 50,
+  eyeColor: "blue",
+};
 
 //Both are valid methods
 person.firstName;
@@ -94,9 +99,9 @@ Do not declare String, Number and Boolean as object. Why?
 </aside>
 
 ```jsx
-x = new String();        // Declares x as a String object
-y = new Number();        // Declares y as a Number object
-z = new Boolean();       // Declares z as a Boolean obje
+x = new String(); // Declares x as a String object
+y = new Number(); // Declares y as a Number object
+z = new Boolean(); // Declares z as a Boolean obje
 ```
 
 ## Event
@@ -112,7 +117,7 @@ The common paradigm goes as follows
 use of backslash operator is common in many programming language
 
 ```jsx
-let text = "We are the so-called \"Vikings\" from the north.";
+let text = 'We are the so-called "Vikings" from the north.';
 ```
 
 Don’t create string object because:
@@ -120,8 +125,8 @@ Don’t create string object because:
 ```jsx
 let x = "John";
 let y = new String("John");
-x == y // true
-x === y // false
+x == y; // true
+x === y; // false
 ```
 
 For object
@@ -129,8 +134,8 @@ For object
 ```jsx
 let x = new String("John");
 let y = new String("John");
-x == y // false
-x === y // false
+x == y; // false
+x === y; // false
 ```
 
 <aside>
@@ -247,7 +252,7 @@ or call `bigInt()`
 
 ```jsx
 let x = 1234567890123456789012345n;
-let y = BigInt(1234567890123456789012345)
+let y = BigInt(1234567890123456789012345);
 ```
 
 With `BigInt` the total number of supported data types in JavaScript is 8:
@@ -277,37 +282,37 @@ Number.isSafeInteger(12345678901234567890);
 
 ## Number Methods
 
-| Method | Description |
-| --- | --- |
-| toString() | Returns a number as a string |
-| toExponential() | Returns a number written in exponential notation |
-| toFixed() | Returns a number written with a number of decimals |
-| toPrecision() | Returns a number written with a specified length |
-| ValueOf() | Returns a number as a number |
+| Method          | Description                                        |
+| --------------- | -------------------------------------------------- |
+| toString()      | Returns a number as a string                       |
+| toExponential() | Returns a number written in exponential notation   |
+| toFixed()       | Returns a number written with a number of decimals |
+| toPrecision()   | Returns a number written with a specified length   |
+| ValueOf()       | Returns a number as a number                       |
 
 ```jsx
 let x = new Number(10);
 x.valueOf();
 ```
 
-| Method | Description |
-| --- | --- |
-| Number() | Returns a number converted from its argument. |
+| Method       | Description                                             |
+| ------------ | ------------------------------------------------------- |
+| Number()     | Returns a number converted from its argument.           |
 | parseFloat() | Parses its argument and returns a floating point number |
-| parseInt() | Parses its argument and returns a whole number |
+| parseInt()   | Parses its argument and returns a whole number          |
 
 ## **Number Properties**
 
-| Property | Description |
-| --- | --- |
-| EPSILON | The difference between 1 and the smallest number > 1. |
-| MAX_VALUE | The largest number possible in JavaScript |
-| MIN_VALUE | The smallest number possible in JavaScript |
-| MAX_SAFE_INTEGER | The maximum safe integer (253 - 1) |
-| MIN_SAFE_INTEGER | The minimum safe integer -(253 - 1) |
-| POSITIVE_INFINITY | Infinity (returned on overflow) |
-| NEGATIVE_INFINITY | Negative infinity (returned on overflow) |
-| NaN | A "Not-a-Number" value |
+| Property          | Description                                           |
+| ----------------- | ----------------------------------------------------- |
+| EPSILON           | The difference between 1 and the smallest number > 1. |
+| MAX_VALUE         | The largest number possible in JavaScript             |
+| MIN_VALUE         | The smallest number possible in JavaScript            |
+| MAX_SAFE_INTEGER  | The maximum safe integer (253 - 1)                    |
+| MIN_SAFE_INTEGER  | The minimum safe integer -(253 - 1)                   |
+| POSITIVE_INFINITY | Infinity (returned on overflow)                       |
+| NEGATIVE_INFINITY | Negative infinity (returned on overflow)              |
+| NaN               | A "Not-a-Number" value                                |
 
 ## Array
 
@@ -326,16 +331,16 @@ person[1]; // Doe
 **Getting value of Object**
 
 ```jsx
-const person = {firstName:"John", lastName:"Doe", age:46};
+const person = { firstName: "John", lastName: "Doe", age: 46 };
 person.lastName; // Doe
 ```
 
 **Array Elements Can Be Objects**
 
 ```jsx
-myArray[0] = Date.now;   // Date Object
+myArray[0] = Date.now; // Date Object
 myArray[1] = myFunction; // Function
-myArray[2] = myCars;     // object
+myArray[2] = myCars; // object
 ```
 
 <aside>
@@ -350,44 +355,45 @@ const person = [];
 person["firstName"] = "John";
 person["lastName"] = "Doe";
 person["age"] = 46;
-person.length;     // Will return 0
-person[0];         // Will return undefined
+person.length; // Will return 0
+person[0]; // Will return undefined
 ```
 
 **Difference between array and object**
 
-| Array | Object |
-| --- | --- |
-| Array use numbered index | Object use named index |
+| Array                                                     | Object                                                            |
+| --------------------------------------------------------- | ----------------------------------------------------------------- |
+| Array use numbered index                                  | Object use named index                                            |
 | use arrays when you want the element names to be numbers. | use objects when you want the element names to be strings (text). |
 
 **new Array Object creation in JavaScript**
 
 ```jsx
 const points = new Array(40); // Array with 40 empty value.
-const points = [40];          // Array with a value 40
+const points = [40]; // Array with a value 40
 ```
 
 `array` and `object` they both returns typeof ‘`object`’ so in order to identify an array we can do is this:
 
 ```jsx
 const fruits = ["Banana", "Orange", "Apple"];
-Array.isArray(fruits);    // true
-fruits instanceof Array;  // true
+Array.isArray(fruits); // true
+fruits instanceof Array; // true
 ```
 
 ### Array Methods
 
-| Method | Details |
-| --- | --- |
-| Array length | returns the length of the array. |
-| Array toString() | returns the string representation. |
-| Array pop() | removes and returns the last element of the array. |
-| Array push() | adds the `value` as the last element of the array and returns the new length of array. |
-| Array shift() | removes and returns the first element of the array. |
-| Array unshift() | adds the `value` as the first element of the array and returns the new length of array. |
+| Method           | Details                                                                                 |
+| ---------------- | --------------------------------------------------------------------------------------- |
+| Array length     | returns the length of the array.                                                        |
+| Array toString() | returns the string representation.                                                      |
+| Array pop()      | removes and returns the last element of the array.                                      |
+| Array push()     | adds the `value` as the last element of the array and returns the new length of array.  |
+| Array shift()    | removes and returns the first element of the array.                                     |
+| Array unshift()  | adds the `value` as the first element of the array and returns the new length of array. |
+
 | Array join()
- | returns an array as a string and a separator can be specified ex. array.join(separator). |
+| returns an array as a string and a separator can be specified ex. array.join(separator). |
 | Array delete() | delete leaves undefined holes in the array. |
 | Array concat() | creates a new array by merging (concatenating) existing arrays and returns the new Array. |
 | Array flat() | reduce the dimensionality of an array. |
@@ -400,15 +406,21 @@ The `sort()` method sorts an array alphabetically so 100 is smaller than 2 tha
 
 ```jsx
 const points = [40, 100, 1, 5, 25, 10];
-points.sort(function(a, b){return a - b}); // sort in ascending order
-points.sort(function(a, b){return b - a}); // sort in descending order
+points.sort(function (a, b) {
+  return a - b;
+}); // sort in ascending order
+points.sort(function (a, b) {
+  return b - a;
+}); // sort in descending order
 ```
 
 ### Sorting in Random Order (might favor some number over other)
 
 ```jsx
 const points = [40, 100, 1, 5, 25, 10];
-points.sort(function(){return 0.5 - Math.random()});
+points.sort(function () {
+  return 0.5 - Math.random();
+});
 ```
 
 ### **The Fisher Yates Method**
@@ -416,8 +428,8 @@ points.sort(function(){return 0.5 - Math.random()});
 ```jsx
 const points = [40, 100, 1, 5, 25, 10];
 
-for (let i = points.length -1; i > 0; i--) {
-  let j = Math.floor(Math.random() * (i+1));
+for (let i = points.length - 1; i > 0; i--) {
+  let j = Math.floor(Math.random() * (i + 1));
   let k = points[i];
   points[i] = points[j];
   points[j] = k;
@@ -460,17 +472,17 @@ function myArrayMax(arr) {
 The trick is to use a compare function for values:
 
 ```jsx
-arr.sort(function(a,b){return a.value - b.value})
+arr.sort(function (a, b) {
+  return a.value - b.value;
+});
 ```
 
 Comparing the string can be a little bit tricky:
 
 ```jsx
-arr.sort(
-    function(a,b){
-        return a.keyName.toLowerCase() - b.keyName.toLowerCase()
-    }
-)
+arr.sort(function (a, b) {
+  return a.keyName.toLowerCase() - b.keyName.toLowerCase();
+});
 ```
 
 Welp! not that tricky actually.
@@ -479,18 +491,18 @@ Welp! not that tricky actually.
 
 Before ES2019, the **`sort()`** method in JavaScript did not guarantee a stable sorting algorithm. This means that when sorting elements based on a specific value, elements with the same value were not guaranteed to maintain their original relative positions in the sorted array.
 
-*Example*
+_Example_
 
 ```jsx
 const myArr = [
-  {name: "X00", price: 100},
-  {name: "X01", price: 100},
-  {name: "X02", price: 100},
-  {name: "X03", price: 100},
-  {name: "X04", price: 110},
-  {name: "X05", price: 110},
-  {name: "X06", price: 110},
-  {name: "X07", price: 110}
+  { name: "X00", price: 100 },
+  { name: "X01", price: 100 },
+  { name: "X02", price: 100 },
+  { name: "X03", price: 100 },
+  { name: "X04", price: 110 },
+  { name: "X05", price: 110 },
+  { name: "X06", price: 110 },
+  { name: "X07", price: 110 },
 ];
 ```
 
@@ -501,14 +513,14 @@ const myArr = [
 forEach takes a callback function and executes for each element of the array
 
 ```jsx
-const num = [1,2,3,4,5];
+const num = [1, 2, 3, 4, 5];
 let txt = "";
 
 num.forEach(myfunc); // Takes callback func myFunc
 
-function myFunc(value,index,array){
-    txt += value + "<br>";
-};
+function myFunc(value, index, array) {
+  txt += value + "<br>";
+}
 ```
 
 <aside>
@@ -528,11 +540,11 @@ The `map()` method does not execute the function for array elements without va
 The `map()` method does not change the original array
 
 ```jsx
-const num = [1,2,3,4,5];
+const num = [1, 2, 3, 4, 5];
 const newNum = num.map(doubleIt);
-const doubleIt = (value,index,arr) => {
-    return value*2;
-}
+const doubleIt = (value, index, arr) => {
+  return value * 2;
+};
 ```
 
 ### flatMap
@@ -540,29 +552,29 @@ const doubleIt = (value,index,arr) => {
 The **`flatMap()`** method also transforms each element of an array based on a provided callback function, but it flattens the resulting array
 
 ```jsx
-const num = [1,2];
+const num = [1, 2];
 
-const newNum = num.map(doubleIt);       // [[1,2],[1,2]]
-const newNum = num.flatMap(doubleIt);   // [1,2,1,2]
+const newNum = num.map(doubleIt); // [[1,2],[1,2]]
+const newNum = num.flatMap(doubleIt); // [1,2,1,2]
 
-const doubleIt = (value,index,arr) => {
-    return arr;
-}
+const doubleIt = (value, index, arr) => {
+  return arr;
+};
 ```
 
 ### filter()
 
-The `filter()` method creates a *new array* with array elements that pass a test.
+The `filter()` method creates a _new array_ with array elements that pass a test.
 
 ```jsx
-const num = [1,2,3,4];
+const num = [1, 2, 3, 4];
 
 const newNum = num.filter(oddNum);
 
-function oddNum(value, index, array){
-	if (value%2 == 1){
-		return true;
-	}
+function oddNum(value, index, array) {
+  if (value % 2 == 1) {
+    return true;
+  }
 }
 ```
 
@@ -571,16 +583,16 @@ function oddNum(value, index, array){
 The `reduce()` method runs a function on each array element to produce (reduce it to) a single value.
 
 ```jsx
-const num = [1,2,3,4,5];
+const num = [1, 2, 3, 4, 5];
 
 const total = num.reduce(getTotal);
 
-function getTotal(total, value, index, array){
-	return total + value;
+function getTotal(total, value, index, array) {
+  return total + value;
 }
 ```
 
-The *reduce* function can also take up a initial value:
+The _reduce_ function can also take up a initial value:
 
 ```jsx
 const total = num.reduce(getTotal, 100);
@@ -595,12 +607,12 @@ This function `reduceRight()` works right to left. Also can take up an initial 
 The function `every()` takes up a function and checks the function against each value and returns true if all of the value satisfies the functions value.
 
 ```jsx
-const num = [10,20,30,40,50];
+const num = [10, 20, 30, 40, 50];
 
 let isTrue = num.every(greaterThanTwenty);
 
-function greaterThanTwenty(value, index, array){
-	return value > 20;
+function greaterThanTwenty(value, index, array) {
+  return value > 20;
 }
 ```
 
@@ -609,12 +621,12 @@ function greaterThanTwenty(value, index, array){
 The function `some()` takes up a function and checks the function against each value and returns true if some of the value satisfies the functions value.
 
 ```jsx
-const num = [10,20,30,40,50];
+const num = [10, 20, 30, 40, 50];
 
 let isTrue = num.some(greaterThanTwenty);
 
-function greaterThanTwenty(value, index, array){
-	return value > 20;
+function greaterThanTwenty(value, index, array) {
+  return value > 20;
 }
 ```
 
@@ -623,40 +635,40 @@ function greaterThanTwenty(value, index, array){
 The `indexOf()` method searches an array for an element value and returns its position.
 
 ```jsx
-const fruits = ["Apple","Banana","Grape","Strawberry","Grape"];
+const fruits = ["Apple", "Banana", "Grape", "Strawberry", "Grape"];
 
 const position = fruits.indexOf("Grape"); //2
 ```
 
 syntax:
 
-*indexOf( item, start )*
+_indexOf( item, start )_
 
 ### lastIndexOf()
 
-The `lastIndexOf()` method searches an array for an element value and returns its position. *from last*
+The `lastIndexOf()` method searches an array for an element value and returns its position. _from last_
 
 ```jsx
-const fruits = ["Apple","Banana","Grape","Strawberry","Grape"];
+const fruits = ["Apple", "Banana", "Grape", "Strawberry", "Grape"];
 
 const position = fruits.indexOf("Grape"); //4
 ```
 
 syntax:
 
-*lastIndexOf( item, start )*
+_lastIndexOf( item, start )_
 
 ### find()
 
 The `find()` method returns the value of the first array element that passes a test function.
 
 ```jsx
-const number = [1,23,15,37,8,16,12];
+const number = [1, 23, 15, 37, 8, 16, 12];
 
 const firstEvenNumber = number.find(evenNumber);
 
-function evenNumber(value,index,array) {
-	return value%2 === 1;
+function evenNumber(value, index, array) {
+  return value % 2 === 1;
 }
 ```
 
@@ -665,50 +677,50 @@ function evenNumber(value,index,array) {
 The `findIndex()` method returns the index of the first array element that passes a test function.
 
 ```jsx
-const number = [1,23,15,37,8,16,12];
+const number = [1, 23, 15, 37, 8, 16, 12];
 
 const postitonOfFirstEvenNumber = number.findIndex(evenNumber);
 
-function evenNumber(value,index,array) {
-	return value%2 === 1;
+function evenNumber(value, index, array) {
+  return value % 2 === 1;
 }
 ```
 
-### Array.from(******ObjectWithLength******)
+### Array.from(**\*\***ObjectWithLength**\*\***)
 
 The `Array.from()` method returns An array from an object that has length.
 
 ```jsx
 const name = "ABRAR";
 
-Array.from(name);      // ["A","B","R","A","R"]
+Array.from(name); // ["A","B","R","A","R"]
 ```
 
 ### Array.keys()
 
-The `Array.keys()` method returns an *iterator* from an object with the keys of an object.
+The `Array.keys()` method returns an _iterator_ from an object with the keys of an object.
 
 ```jsx
 const name = ["Abrar", "Fahim", "Patwari"];
 
 const myKeys = name.keys();
 
-for (let key of myKeys){
-	console.log(key);      //0 1 2
+for (let key of myKeys) {
+  console.log(key); //0 1 2
 }
 ```
 
 ### Array.entries()
 
-The `Array.entries()` method returns an *iterator* from an object with the key/value pair of an object.
+The `Array.entries()` method returns an _iterator_ from an object with the key/value pair of an object.
 
 ```jsx
 const name = ["Abrar", "Fahim", "Patwari"];
 
 const myKeys = name.entries();
 
-for (let key of myKeys){
-	console.log(key);     // [0,"Abrar"] [1,"Fahim"] [2,"Patwari"]
+for (let key of myKeys) {
+  console.log(key); // [0,"Abrar"] [1,"Fahim"] [2,"Patwari"]
 }
 ```
 
@@ -717,10 +729,10 @@ for (let key of myKeys){
 The `Array.includes()` method returns true if the element is present in the array.
 
 ```jsx
-const data = [NaN, 1, 2, 3 , "Grape"];
+const data = [NaN, 1, 2, 3, "Grape"];
 
-const doesExist = data.indexOf(NaN);     // -1
-const doesExist = data.includes(NaN);    // true
+const doesExist = data.indexOf(NaN); // -1
+const doesExist = data.includes(NaN); // true
 ```
 
 <aside>
@@ -733,9 +745,9 @@ const doesExist = data.includes(NaN);    // true
 The `Array Spread ...` spreads an array elements
 
 ```jsx
-const first = [1,2,3,4,5];
-const second = [6,7,8,9,10];
-const third = [11,12,13,14,15];
+const first = [1, 2, 3, 4, 5];
+const second = [6, 7, 8, 9, 10];
+const third = [11, 12, 13, 14, 15];
 
 const numbers = [...first, ...second, ...third];
 
@@ -744,12 +756,11 @@ const numbers = [...first, ...second, ...third];
 
 ### Arrays are not constants
 
-The   `Array`   are not constant. When we declare it with *const* we declare that the array reference is a const. That cannot be changed. *i.e.* we can update the array with push, pop or reassigning the value
+The  `Array` are not constant. When we declare it with _const_ we declare that the array reference is a const. That cannot be changed. _i.e._ we can update the array with push, pop or reassigning the value
 
 ```jsx
-let x = [1,2,3];
+let x = [1, 2, 3];
 x.push(value);
-
 ```
 
 ### Array has block scope
@@ -757,7 +768,7 @@ x.push(value);
 ```jsx
 const fruits = ["Apple", "Banana"];
 {
-	const fruits = ["Grape", "Strawberry"];
+  const fruits = ["Grape", "Strawberry"];
 }
 ```
 
@@ -781,100 +792,100 @@ const d = new Date(msec);
 
 ### Date Get Methods
 
-| Method | Description |
-| --- | --- |
-| getFullYear() | Get year as a four digit number (yyyy) |
-| getMonth() | Get month as a number (0-11) |
-| getDate() | Get day as a number (1-31) |
-| getDay() | Get weekday as a number (0-6) |
-| getHours() | Get hour (0-23) |
-| getMinutes() | Get minute (0-59) |
-| getSeconds() | Get second (0-59) |
-| getMilliseconds() | Get millisecond (0-999) |
-| getTime() | Get time (milliseconds since January 1, 1970) |
+| Method            | Description                                   |
+| ----------------- | --------------------------------------------- |
+| getFullYear()     | Get year as a four digit number (yyyy)        |
+| getMonth()        | Get month as a number (0-11)                  |
+| getDate()         | Get day as a number (1-31)                    |
+| getDay()          | Get weekday as a number (0-6)                 |
+| getHours()        | Get hour (0-23)                               |
+| getMinutes()      | Get minute (0-59)                             |
+| getSeconds()      | Get second (0-59)                             |
+| getMilliseconds() | Get millisecond (0-999)                       |
+| getTime()         | Get time (milliseconds since January 1, 1970) |
 
 ### Date Set Methods
 
-| Method | Description |
-| --- | --- |
-| setDate() | Set the day as a number (1-31) |
-| setFullYear() | Set the year (optionally month and day) |
-| setHours() | Set the hour (0-23) |
-| setMilliseconds() | Set the milliseconds (0-999) |
-| setMinutes() | Set the minutes (0-59) |
-| setMonth() | Set the month (0-11) |
-| setSeconds() | Set the seconds (0-59) |
-| setTime() | Set the time (milliseconds since January 1, 1970) |
+| Method            | Description                                       |
+| ----------------- | ------------------------------------------------- |
+| setDate()         | Set the day as a number (1-31)                    |
+| setFullYear()     | Set the year (optionally month and day)           |
+| setHours()        | Set the hour (0-23)                               |
+| setMilliseconds() | Set the milliseconds (0-999)                      |
+| setMinutes()      | Set the minutes (0-59)                            |
+| setMonth()        | Set the month (0-11)                              |
+| setSeconds()      | Set the seconds (0-59)                            |
+| setTime()         | Set the time (milliseconds since January 1, 1970) |
 
 ### JS Math Methods
 
-| Method | Description |
-| --- | --- |
-| https://www.w3schools.com/jsref/jsref_abs.asp | Returns the absolute value of x |
-| https://www.w3schools.com/jsref/jsref_acos.asp | Returns the arccosine of x, in radians |
-| https://www.w3schools.com/jsref/jsref_acosh.asp | Returns the hyperbolic arccosine of x |
-| https://www.w3schools.com/jsref/jsref_asin.asp | Returns the arcsine of x, in radians |
-| https://www.w3schools.com/jsref/jsref_asinh.asp | Returns the hyperbolic arcsine of x |
-| https://www.w3schools.com/jsref/jsref_atan.asp | Returns the arctangent of x as a numeric value between -PI/2 and PI/2 radians |
-| https://www.w3schools.com/jsref/jsref_atan2.asp | Returns the arctangent of the quotient of its arguments |
-| https://www.w3schools.com/jsref/jsref_atanh.asp | Returns the hyperbolic arctangent of x |
-| https://www.w3schools.com/jsref/jsref_cbrt.asp | Returns the cubic root of x |
-| https://www.w3schools.com/jsref/jsref_ceil.asp | Returns x, rounded upwards to the nearest integer |
-| https://www.w3schools.com/jsref/jsref_cos.asp | Returns the cosine of x (x is in radians) |
-| https://www.w3schools.com/jsref/jsref_cosh.asp | Returns the hyperbolic cosine of x |
-| https://www.w3schools.com/jsref/jsref_exp.asp | Returns the value of Ex |
-| https://www.w3schools.com/jsref/jsref_floor.asp | Returns x, rounded downwards to the nearest integer |
-| https://www.w3schools.com/jsref/jsref_log.asp | Returns the natural logarithm (base E) of x |
-| https://www.w3schools.com/jsref/jsref_max.asp | Returns the number with the highest value |
-| https://www.w3schools.com/jsref/jsref_min.asp | Returns the number with the lowest value |
-| https://www.w3schools.com/jsref/jsref_pow.asp | Returns the value of x to the power of y |
-| https://www.w3schools.com/jsref/jsref_random.asp | Returns a random number between 0 and 1 |
-| https://www.w3schools.com/jsref/jsref_round.asp | Rounds x to the nearest integer |
-| https://www.w3schools.com/jsref/jsref_sign.asp | Returns if x is negative, null or positive (-1, 0, 1) |
-| https://www.w3schools.com/jsref/jsref_sin.asp | Returns the sine of x (x is in radians) |
-| https://www.w3schools.com/jsref/jsref_sinh.asp | Returns the hyperbolic sine of x |
-| https://www.w3schools.com/jsref/jsref_sqrt.asp | Returns the square root of x |
-| https://www.w3schools.com/jsref/jsref_tan.asp | Returns the tangent of an angle |
-| https://www.w3schools.com/jsref/jsref_tanh.asp | Returns the hyperbolic tangent of a number |
-| https://www.w3schools.com/jsref/jsref_trunc.asp | Returns the integer part of a number (x) |
+| Method                                           | Description                                                                   |
+| ------------------------------------------------ | ----------------------------------------------------------------------------- |
+| https://www.w3schools.com/jsref/jsref_abs.asp    | Returns the absolute value of x                                               |
+| https://www.w3schools.com/jsref/jsref_acos.asp   | Returns the arccosine of x, in radians                                        |
+| https://www.w3schools.com/jsref/jsref_acosh.asp  | Returns the hyperbolic arccosine of x                                         |
+| https://www.w3schools.com/jsref/jsref_asin.asp   | Returns the arcsine of x, in radians                                          |
+| https://www.w3schools.com/jsref/jsref_asinh.asp  | Returns the hyperbolic arcsine of x                                           |
+| https://www.w3schools.com/jsref/jsref_atan.asp   | Returns the arctangent of x as a numeric value between -PI/2 and PI/2 radians |
+| https://www.w3schools.com/jsref/jsref_atan2.asp  | Returns the arctangent of the quotient of its arguments                       |
+| https://www.w3schools.com/jsref/jsref_atanh.asp  | Returns the hyperbolic arctangent of x                                        |
+| https://www.w3schools.com/jsref/jsref_cbrt.asp   | Returns the cubic root of x                                                   |
+| https://www.w3schools.com/jsref/jsref_ceil.asp   | Returns x, rounded upwards to the nearest integer                             |
+| https://www.w3schools.com/jsref/jsref_cos.asp    | Returns the cosine of x (x is in radians)                                     |
+| https://www.w3schools.com/jsref/jsref_cosh.asp   | Returns the hyperbolic cosine of x                                            |
+| https://www.w3schools.com/jsref/jsref_exp.asp    | Returns the value of Ex                                                       |
+| https://www.w3schools.com/jsref/jsref_floor.asp  | Returns x, rounded downwards to the nearest integer                           |
+| https://www.w3schools.com/jsref/jsref_log.asp    | Returns the natural logarithm (base E) of x                                   |
+| https://www.w3schools.com/jsref/jsref_max.asp    | Returns the number with the highest value                                     |
+| https://www.w3schools.com/jsref/jsref_min.asp    | Returns the number with the lowest value                                      |
+| https://www.w3schools.com/jsref/jsref_pow.asp    | Returns the value of x to the power of y                                      |
+| https://www.w3schools.com/jsref/jsref_random.asp | Returns a random number between 0 and 1                                       |
+| https://www.w3schools.com/jsref/jsref_round.asp  | Rounds x to the nearest integer                                               |
+| https://www.w3schools.com/jsref/jsref_sign.asp   | Returns if x is negative, null or positive (-1, 0, 1)                         |
+| https://www.w3schools.com/jsref/jsref_sin.asp    | Returns the sine of x (x is in radians)                                       |
+| https://www.w3schools.com/jsref/jsref_sinh.asp   | Returns the hyperbolic sine of x                                              |
+| https://www.w3schools.com/jsref/jsref_sqrt.asp   | Returns the square root of x                                                  |
+| https://www.w3schools.com/jsref/jsref_tan.asp    | Returns the tangent of an angle                                               |
+| https://www.w3schools.com/jsref/jsref_tanh.asp   | Returns the hyperbolic tangent of a number                                    |
+| https://www.w3schools.com/jsref/jsref_trunc.asp  | Returns the integer part of a number (x)                                      |
 
 ### A Proper Random Function
 
 The following function will give a random number between min and max
 
 ```jsx
-function rangedRandom (min, max){
-	return Math.floor(Math.random()*(max - min + 1))+min
+function rangedRandom(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 ```
 
 ### Boolean
 
-The   `new Boolean(true/false)`   can be used to create a Boolean object but it is not recommended since it slows down the execution and adds complexity in the code base.
+The  `new Boolean(true/false)` can be used to create a Boolean object but it is not recommended since it slows down the execution and adds complexity in the code base.
 
 Moreover comparing two js object always returns false.
 
 ```jsx
 let x = new Boolean(true);
 let y = new Boolean(true);
-x == y                     // false
-x === y                    // false
+x == y; // false
+x === y; // false
 ```
 
 ### Truthy vs Falsy values in JS
 
 Following are the list of truthy and falsy values in javascript:
 
-| Truthy Values | Falsy Values |
-| --- | --- |
-| true | false |
-| non-zero numbers (e.g., 1, -1) | 0 |
-| non-empty strings | empty string ('') |
-| non-empty arrays | empty array ([]) |
-| non-empty objects | null |
-| functions | undefined |
-| instances of classes | NaN (Not a Number) |
-| Any other value not listed in the falsy column |  |
+| Truthy Values                                  | Falsy Values       |
+| ---------------------------------------------- | ------------------ |
+| true                                           | false              |
+| non-zero numbers (e.g., 1, -1)                 | 0                  |
+| non-empty strings                              | empty string ('')  |
+| non-empty arrays                               | empty array ([])   |
+| non-empty objects                              | null               |
+| functions                                      | undefined          |
+| instances of classes                           | NaN (Not a Number) |
+| Any other value not listed in the falsy column |                    |
 
 ## Conditions
 
@@ -885,22 +896,22 @@ The ternary operator returns value based on condition
 ```jsx
 let value1 = x;
 let value2 = y;
-let variablename = (condition) ? value1 : value2;
+let variablename = condition ? value1 : value2;
 ```
 
 ### Nullish Coalescing Operator
 
-The   `??`   operator returns the first argument if the value is not null otherwise the second argument.
+The  `??` operator returns the first argument if the value is not null otherwise the second argument.
 
 ```jsx
 let first = null;
 let second = "Value";
-let result = first ?? second;   // result => second
+let result = first ?? second; // result => second
 ```
 
 ### Optional Chaining Operator
 
-The   `?.`   returns  `undefined`  or  `null`  instead of throwing error:
+The  `?.` returns `undefined` or `null` instead of throwing error:
 
 ```jsx
 let x = person?.name;
@@ -922,7 +933,7 @@ if (condition1) {
 
 ### Switch Case
 
-The  `switch`  case:
+The  `switch` case:
 
 1. If multiple cases are found it will execute the first case first
 2. If no case is found the default case is executed
@@ -967,15 +978,15 @@ for (expression 1; expression 2; expression 3) {
 }
 ```
 
-The `for loop` has block scope. *[if let is used instead of var]*
+The `for loop` has block scope. _[if let is used instead of var]_
 
 ### For In
 
 The JavaScript `for in` statement loops through the properties of an Object:
 
 ```jsx
-for (key in object){
-	console.log(object[key], "is ", key)
+for (key in object) {
+  console.log(object[key], "is ", key);
 }
 ```
 
@@ -985,22 +996,22 @@ The JavaScript `for in` loop can loop through Array as well. But it is not rec
 
 The JavaScript `for of` statement loops through the values of an iterable object.
 
-If an object provides object[******************Symbol.iterator]****************** function then, that can be used to loop with the `for of`  loop
+If an object provides object[******************Symbol.iterator]********\*\********* function then, that can be used to loop with the `for of`  loop
 
 ```jsx
 const array = [1, 2, 3];
-if (typeof array[Symbol.iterator] === 'function') {
-  console.log('Array provides Symbol.iterator');
+if (typeof array[Symbol.iterator] === "function") {
+  console.log("Array provides Symbol.iterator");
 } else {
-  console.log('Array does not provide Symbol.iterator');
+  console.log("Array does not provide Symbol.iterator");
 }
 ```
 
 The implementation is as follows:
 
 ```jsx
-for (each of array){
-	console.log(each);
+for (each of array) {
+  console.log(each);
 }
 ```
 
@@ -1021,54 +1032,53 @@ The `do while` loop is a variant of the while loop. This loop will execute the
 ```jsx
 do {
   // code block to be executed
-}
-while (condition);
+} while (condition);
 ```
 
 ### Label (Break and Continue)
 
-Label can be used to break out of a loop or scope in javascript. Following is a label in javascript: 
+Label can be used to break out of a loop or scope in javascript. Following is a label in javascript:
 
 ```jsx
-alabel:{
-    console.log("Abrar");
-    blabel:{
-        for (let i = 0; i <5; i++){
-            if (i==4){
-                console.log("Breaking blabel")
-                break blabel
-            };
-            console.log("Fahim")
-        }    
+alabel: {
+  console.log("Abrar");
+  blabel: {
+    for (let i = 0; i < 5; i++) {
+      if (i == 4) {
+        console.log("Breaking blabel");
+        break blabel;
+      }
+      console.log("Fahim");
     }
-    console.log("Breaking alabel");
-    break alabel;
+  }
+  console.log("Breaking alabel");
+  break alabel;
 }
 ```
 
 ## Sets
 
-| Method | Description |
-| --- | --- |
-| new Set() | Creates a new Set |
-| add() | Adds a new element to the Set |
-| delete() | Removes an element from a Set |
-| has() | Returns true if a value exists in the Set |
-| forEach() | Invokes a callback for each element in the Set |
-| values() | Returns an iterator with all the values in a Set |
+| Method    | Description                                      |
+| --------- | ------------------------------------------------ |
+| new Set() | Creates a new Set                                |
+| add()     | Adds a new element to the Set                    |
+| delete()  | Removes an element from a Set                    |
+| has()     | Returns true if a value exists in the Set        |
+| forEach() | Invokes a callback for each element in the Set   |
+| values()  | Returns an iterator with all the values in a Set |
 
-| Property | Description |
-| --- | --- |
-| size | Returns the number of elements in a Set |
+| Property | Description                             |
+| -------- | --------------------------------------- |
+| size     | Returns the number of elements in a Set |
 
 Three ways a set can be created:
 
 1. Passing an array inside the `new Set()`
 2. Adding values.
-3. Adding variables. 
+3. Adding variables.
 
 ```jsx
-const fruits = new Set(["Apple", "Banana", "Grape"])
+const fruits = new Set(["Apple", "Banana", "Grape"]);
 ```
 
 ## Map
@@ -1077,17 +1087,17 @@ A Map holds key-value pairs where the keys can be any datatype.
 
 A Map remembers the original insertion order of the keys.
 
-| Method | Description |
-| --- | --- |
-| new Map() | Creates a new Map |
-| set() | Sets the value for a key in a Map |
-| get() | Gets the value for a key in a Map |
-| delete() | Removes a Map element specified by the key |
-| has() | Returns true if a key exists in a Map |
-| forEach() | Calls a function for each key/value pair in a Map |
+| Method    | Description                                              |
+| --------- | -------------------------------------------------------- |
+| new Map() | Creates a new Map                                        |
+| set()     | Sets the value for a key in a Map                        |
+| get()     | Gets the value for a key in a Map                        |
+| delete()  | Removes a Map element specified by the key               |
+| has()     | Returns true if a key exists in a Map                    |
+| forEach() | Calls a function for each key/value pair in a Map        |
 | entries() | Returns an iterator with the [key, value] pairs in a Map |
-| Property | Description |
-| size | Returns the number of elements in a Map |
+| Property  | Description                                              |
+| size      | Returns the number of elements in a Map                  |
 
 Two ways a `Map` can be set:
 
@@ -1096,9 +1106,9 @@ Two ways a `Map` can be set:
 
 ```jsx
 const fruits = new Map([
-  [[1,"apples"], 500, "a"],
-  [[2,"bananas"], 300, "b"],
-  [[3,"oranges"], 200, "c"]
+  [[1, "apples"], 500, "a"],
+  [[2, "bananas"], 300, "b"],
+  [[3, "oranges"], 200, "c"],
 ]);
 ```
 
@@ -1131,16 +1141,16 @@ And 2 data types that cannot contain values:
 ### null ! == undefined
 
 ```jsx
-typeof "John"                 // Returns "string"
-typeof 3.14                   // Returns "number"
-typeof NaN                    // Returns "number"
-typeof false                  // Returns "boolean"
-typeof [1,2,3,4]              // Returns "object"
-typeof {name:'John', age:34}  // Returns "object"
-typeof new Date()             // Returns "object"
-typeof function () {}         // Returns "function"
-typeof myCar                  // Returns "undefined" *
-typeof null                   // Returns "object"
+typeof "John"; // Returns "string"
+typeof 3.14; // Returns "number"
+typeof NaN; // Returns "number"
+typeof false; // Returns "boolean"
+typeof [1, 2, 3, 4]; // Returns "object"
+typeof { name: "John", age: 34 }; // Returns "object"
+typeof new Date(); // Returns "object"
+typeof function () {}; // Returns "function"
+typeof myCar; // Returns "undefined" *
+typeof null; // Returns "object"
 ```
 
 Notice the following:
@@ -1149,8 +1159,8 @@ Notice the following:
 - The data type of an array is **object**
 - The data type of a date is **object**
 - The data type of null is **object**
-- The data type of an undefined variable is **undefined** *
-- The data type of a variable that has not been assigned a value is also **undefined** *
+- The data type of an undefined variable is **undefined** \*
+- The data type of a variable that has not been assigned a value is also **undefined** \*
 
 <aside>
 💡 `null` should be a null type but it is object. Now how do we know if an `array`  is an `array` and same for the `date` ?
@@ -1183,26 +1193,26 @@ The `typeof` operator can return one of two complex types:
 To check weather an array is array:
 
 ```jsx
-function isArray(item){
-	return item.constructor == Array;
+function isArray(item) {
+  return item.constructor == Array;
 }
 
-function isDate(item){
-	return item.constructor == Date;
+function isDate(item) {
+  return item.constructor == Date;
 }
 ```
 
-### instanceof  Operator
+### instanceof Operator
 
 The instanceof operator returns true if X is instance of Y
 
 ```jsx
 const cars = ["Saab", "Volvo", "BMW"];
 
-(cars instanceof Array);
-(cars instanceof Object);
-(cars instanceof String);
-(cars instanceof Number);
+cars instanceof Array;
+cars instanceof Object;
+cars instanceof String;
+cars instanceof Number;
 ```
 
 ### void operator
@@ -1223,30 +1233,30 @@ returns `undefined` .
 - Converting Booleans to Numbers
 - Converting Numbers to Booleans
 
-| Method | Description |
-| --- | --- |
-| Number() | Returns a number, converted from its argument |
+| Method       | Description                                         |
+| ------------ | --------------------------------------------------- |
+| Number()     | Returns a number, converted from its argument       |
 | parseFloat() | Parses a string and returns a floating point number |
-| parseInt() | Parses a string and returns an integer |
+| parseInt()   | Parses a string and returns an integer              |
 
-| Method | Description |
-| --- | --- |
-| String() | Returns a string, converted from its argument |
-| toString() | Converts a number to string |
+| Method     | Description                                   |
+| ---------- | --------------------------------------------- |
+| String()   | Returns a string, converted from its argument |
+| toString() | Converts a number to string                   |
 
-| Method | Description |
-| --- | --- |
-| toExponential() | Returns a string, with a number rounded and written using exponential notation. |
-| toFixed() | Returns a string, with a number rounded and written with a specified number of decimals. |
-| toPrecision() | Returns a string, with a number written with a specified length |
+| Method          | Description                                                                              |
+| --------------- | ---------------------------------------------------------------------------------------- |
+| toExponential() | Returns a string, with a number rounded and written using exponential notation.          |
+| toFixed()       | Returns a string, with a number rounded and written with a specified number of decimals. |
+| toPrecision()   | Returns a string, with a number written with a specified length                          |
 
 ### Converting Date and String
 
 ```jsx
-const d = new Date(123123123123)
+const d = new Date(123123123123);
 
-d.getTime()
-d.toString()
+d.getTime();
+d.toString();
 ```
 
 ### Converting Boolean and String
@@ -1256,33 +1266,32 @@ const d = true;
 
 String(d);
 true.toString();
-
 ```
 
-| Original Value | Converted to Number | Converted to String | Converted to Boolean |
-| --- | --- | --- | --- |
-| false | 0 | "false" | false |
-| true | 1 | "true" | true |
-| 0 | 0 | "0" | false |
-| 1 | 1 | "1" | true |
-| "0" | 0 | "0" | true |
-| "000" | 0 | "000" | true |
-| "1" | 1 | "1" | true |
-| NaN | NaN | "NaN" | false |
-| Infinity | Infinity | "Infinity" | true |
-| -Infinity | -Infinity | "-Infinity" | true |
-| "" | 0 | "" | false |
-| "20" | 20 | "20" | true |
-| "twenty" | NaN | "twenty" | true |
-| [ ] | 0 | "" | true |
-| [20] | 20 | "20" | true |
-| [10,20] | NaN | "10,20" | true |
-| ["twenty"] | NaN | "twenty" | true |
-| ["ten","twenty"] | NaN | "ten,twenty" | true |
-| function(){} | NaN | "function(){}" | true |
-| { } | NaN | "[object Object]" | true |
-| null | 0 | "null" | false |
-| undefined | NaN | "undefined" | false |
+| Original Value   | Converted to Number | Converted to String | Converted to Boolean |
+| ---------------- | ------------------- | ------------------- | -------------------- |
+| false            | 0                   | "false"             | false                |
+| true             | 1                   | "true"              | true                 |
+| 0                | 0                   | "0"                 | false                |
+| 1                | 1                   | "1"                 | true                 |
+| "0"              | 0                   | "0"                 | true                 |
+| "000"            | 0                   | "000"               | true                 |
+| "1"              | 1                   | "1"                 | true                 |
+| NaN              | NaN                 | "NaN"               | false                |
+| Infinity         | Infinity            | "Infinity"          | true                 |
+| -Infinity        | -Infinity           | "-Infinity"         | true                 |
+| ""               | 0                   | ""                  | false                |
+| "20"             | 20                  | "20"                | true                 |
+| "twenty"         | NaN                 | "twenty"            | true                 |
+| [ ]              | 0                   | ""                  | true                 |
+| [20]             | 20                  | "20"                | true                 |
+| [10,20]          | NaN                 | "10,20"             | true                 |
+| ["twenty"]       | NaN                 | "twenty"            | true                 |
+| ["ten","twenty"] | NaN                 | "ten,twenty"        | true                 |
+| function(){}     | NaN                 | "function(){}"      | true                 |
+| { }              | NaN                 | "[object Object]"   | true                 |
+| null             | 0                   | "null"              | false                |
+| undefined        | NaN                 | "undefined"         | false                |
 
 ## Regular Expression
 
@@ -1307,45 +1316,45 @@ In JS regex is used with two string method:
 
 </aside>
 
-| Modifier | Description |
-| --- | --- |
-| i | Perform case-insensitive matching |
-| g | Perform a global match (find all matches rather than stopping after the first match) |
-| m | Perform multiline matching |
+| Modifier | Description                                                                          |
+| -------- | ------------------------------------------------------------------------------------ |
+| i        | Perform case-insensitive matching                                                    |
+| g        | Perform a global match (find all matches rather than stopping after the first match) |
+| m        | Perform multiline matching                                                           |
 
 <aside>
 💡 **Brackets** are used to find a range of characters:
 
 </aside>
 
-| Expression | Description |
-| --- | --- |
-| [abc] | Find any of the characters between the brackets |
-| [0-9] | Find any of the digits between the brackets |
-| (x|y) | Find any of the alternatives separated with | |
+| Expression | Description                                     |
+| ---------- | ----------------------------------------------- | ------------------------------------------- | --- |
+| [abc]      | Find any of the characters between the brackets |
+| [0-9]      | Find any of the digits between the brackets     |
+| (x         | y)                                              | Find any of the alternatives separated with |     |
 
 <aside>
 💡 **Metacharacters** are characters with a special meaning:
 
 </aside>
 
-| Metacharacter | Description |
-| --- | --- |
-| \d | Find a digit |
-| \s | Find a whitespace character |
-| \b | Find a match at the beginning of a word like this: \bWORD, or at the end of a word like this: WORD\b |
-| \uxxxx | Find the Unicode character specified by the hexadecimal number xxxx |
+| Metacharacter | Description                                                                                          |
+| ------------- | ---------------------------------------------------------------------------------------------------- |
+| \d            | Find a digit                                                                                         |
+| \s            | Find a whitespace character                                                                          |
+| \b            | Find a match at the beginning of a word like this: \bWORD, or at the end of a word like this: WORD\b |
+| \uxxxx        | Find the Unicode character specified by the hexadecimal number xxxx                                  |
 
 <aside>
 💡 **Quantifiers** define quantities:
 
 </aside>
 
-| Quantifier | Description |
-| --- | --- |
-| n+ | Matches any string that contains at least one n |
-| n* | Matches any string that contains zero or more occurrences of n |
-| n? | Matches any string that contains zero or one occurrences of n |
+| Quantifier | Description                                                    |
+| ---------- | -------------------------------------------------------------- |
+| n+         | Matches any string that contains at least one n                |
+| n\*        | Matches any string that contains zero or more occurrences of n |
+| n?         | Matches any string that contains zero or one occurrences of n  |
 
 ### test()
 
@@ -1364,6 +1373,7 @@ The `exec()` method returns the part that matches with the pattern. If nothing 
 let text = "There is no charge for the real awesomeness or the attractiveness!";
 /some/.exec(text);
 ```
+
 ## Try, Catch, Finally, Throw
 
 The `try` statement tries to execute a block
@@ -1380,10 +1390,10 @@ An interesting fact about finally is shown bellow:
 function sample() {
   try {
     console.log("This is Try");
-    return 10
+    return 10;
   } finally {
     console.log("This is Finally");
-    return 20
+    return 20;
   }
 }
 ```
@@ -1398,35 +1408,35 @@ The following code is another interesting case of the `try, catch` block
 ```jsx
 function sample() {
   try {
-      setTimeout(function(){
-        console.log("This is Try");
-        errorvariable; // Should throw an error
-      }, 1000)
-  } catch(error) {
-    console.log("Inside catch",error);
+    setTimeout(function () {
+      console.log("This is Try");
+      errorvariable; // Should throw an error
+    }, 1000);
+  } catch (error) {
+    console.log("Inside catch", error);
   }
 }
 ```
 
 ### Error Object Properties
 
-| Property | Description |
-| --- | --- |
-| name | Sets or returns an error name |
-| message | Sets or returns an error message (a string) |
+| Property | Description                                 |
+| -------- | ------------------------------------------- |
+| name     | Sets or returns an error name               |
+| message  | Sets or returns an error message (a string) |
 
 ### Error Name Values
 
 Six different values can be returned by the error name property:
 
-| Error Name | Description |
-| --- | --- |
-| EvalError | An error has occurred in the eval() function |
-| RangeError | A number "out of range" has occurred |
-| ReferenceError | An illegal reference has occurred |
-| SyntaxError | A syntax error has occurred |
-| TypeError | A type error has occurred |
-| URIError | An error in encodeURI() has occurred |
+| Error Name     | Description                                  |
+| -------------- | -------------------------------------------- |
+| EvalError      | An error has occurred in the eval() function |
+| RangeError     | A number "out of range" has occurred         |
+| ReferenceError | An illegal reference has occurred            |
+| SyntaxError    | A syntax error has occurred                  |
+| TypeError      | A type error has occurred                    |
+| URIError       | An error in encodeURI() has occurred         |
 
 ## Scope
 
@@ -1456,8 +1466,8 @@ Variable declared outside of function has global scope. It is accessible in the 
 ```jsx
 myFunction();
 console.log("Car Name is: ", carName);
-function myFunction(){
-	carName = "Tesla"
+function myFunction() {
+  carName = "Tesla";
 }
 ```
 
@@ -1493,21 +1503,21 @@ Hoisting is JavaScript's default behavior of moving declarations to the top.
 
 </aside>
 
-******************************Reference Error******************************
+**************\*\***************Reference Error**************\*\***************
 
 ```jsx
 carName = "Volvo";
 let carName;
 ```
 
-************Syntax Error************
+****\*\*\*\*****Syntax Error****\*\*\*\*****
 
 ```jsx
 carName = "Tesla";
 const carName;
 ```
 
-****************Hoisting****************
+******\*\*\*\*******Hoisting******\*\*\*\*******
 
 ```jsx
 carName = "Tesla";
@@ -1528,11 +1538,15 @@ What’s not available to use before declaration.
 let x = 010; // Octal numeric literals
 let x = "\010"; // Octal escape characters
 
-Object.defineProperty(obj, "x", {value:0, writable:false});
-obj.x = 3.14;            // writting to readonly property
+Object.defineProperty(obj, "x", { value: 0, writable: false });
+obj.x = 3.14; // writting to readonly property
 
-const obj = {get x() {return 0} };
-obj.x = 3.14;            // writting to getonly property
+const obj = {
+  get x() {
+    return 0;
+  },
+};
+obj.x = 3.14; // writting to getonly property
 
 delete Object.prototype; // Deleting undeltable object
 ```
@@ -1550,3 +1564,49 @@ function myFunction() {
 }
 myFunction();
 ```
+
+# Javascript Functions
+
+## Function Definition
+
+We can use function **declaration** or function **expression** .
+
+```jsx
+// Function Declaration
+function x(a, b) {
+  return a * b;
+}
+// Function Expression
+const x = function (a, b) {
+  return a * b;
+};
+```
+
+<aside>
+💡 This above function is actually an anonymous function.
+
+</aside>
+
+### Function constructor()
+
+New function can be created with a new function constructor.
+
+```jsx
+const myFunction = new Function("a", "b", "return a * b");
+
+let x = myFunction(4, 3);
+```
+
+### Function Hoisting
+
+In JS function declaration are hoisted. Thats why we can use function before it is being declared.
+
+```jsx
+myFunction(5);
+
+function myFunction(y) {
+  return y * y;
+}
+```
+
+Function defined using expression/anonymous function are not hoisted.
