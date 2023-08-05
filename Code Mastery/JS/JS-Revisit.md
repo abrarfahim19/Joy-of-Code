@@ -996,7 +996,7 @@ The JavaScript `for in` loop can loop through Array as well. But it is not rec
 
 The JavaScript `for of` statement loops through the values of an iterable object.
 
-If an object provides object[******************Symbol.iterator]********\*\********* function then, that can be used to loop with the `for of`  loop
+If an object provides object[******************Symbol.iterator]**\*\*\*\***\*\***\*\*\*\*** function then, that can be used to loop with the `for of`  loop
 
 ```jsx
 const array = [1, 2, 3];
@@ -1503,21 +1503,21 @@ Hoisting is JavaScript's default behavior of moving declarations to the top.
 
 </aside>
 
-**************\*\***************Reference Error**************\*\***************
+******\*\*******\*\*******\*\*******Reference Error******\*\*******\*\*******\*\*******
 
 ```jsx
 carName = "Volvo";
 let carName;
 ```
 
-****\*\*\*\*****Syntax Error****\*\*\*\*****
+\***\*\*\*\*\*\*\***Syntax Error\***\*\*\*\*\*\*\***
 
 ```jsx
 carName = "Tesla";
 const carName;
 ```
 
-******\*\*\*\*******Hoisting******\*\*\*\*******
+**\*\***\*\*\*\***\*\***Hoisting**\*\***\*\*\*\***\*\***
 
 ```jsx
 carName = "Tesla";
@@ -1610,3 +1610,26 @@ function myFunction(y) {
 ```
 
 Function defined using expression/anonymous function are not hoisted.
+
+### Self Invoking Function
+
+The following function will self invoke
+
+```jsx
+(function () {
+  let x = "Hello!!"; // I will invoke myself
+})();
+```
+
+### Functions are Object
+
+The `typeof` a function is `function` but it is best understood with an object
+
+<aside>
+💡 A function defined as the property of an object, is called a **method** to the object.
+
+A function designed to create new objects, is called an object constructor.
+
+</aside>
+
+Functions in JavaScript are more than just blocks of code that perform specific tasks. They are objects that can be manipulated, passed around, and used in various ways, which makes JavaScript a highly versatile and functional programming language
