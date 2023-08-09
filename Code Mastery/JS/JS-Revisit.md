@@ -1503,7 +1503,7 @@ Hoisting is JavaScript's default behavior of moving declarations to the top.
 
 </aside>
 
-******\*\*******\*\*******\*\*******Reference Error******\*\*******\*\*******\*\*******
+**\*\***\*\***\*\***\*\***\*\***\*\***\*\***Reference Error**\*\***\*\***\*\***\*\***\*\***\*\***\*\***
 
 ```jsx
 carName = "Volvo";
@@ -1633,3 +1633,21 @@ A function designed to create new objects, is called an object constructor.
 </aside>
 
 Functions in JavaScript are more than just blocks of code that perform specific tasks. They are objects that can be manipulated, passed around, and used in various ways, which makes JavaScript a highly versatile and functional programming language
+
+### Arrow Functions
+
+Arrow function allows a short syntax to be written for function expression.
+
+```jsx
+const x = (a, b) => a * b;
+```
+
+It is better to use return and `{}` because the function can be multiline statement.
+
+```jsx
+const x = (a, b) => {
+  return a * b;
+};
+```
+
+Array function do not have its own `this`. So it is not suited well for function declaration and object method.
