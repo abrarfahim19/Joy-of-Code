@@ -1651,3 +1651,69 @@ const x = (a, b) => {
 ```
 
 Array function do not have its own `this`. So it is not suited well for function declaration and object method.
+
+## Function Parameters
+
+The function parameter in JS can have default value. If the parameter is called less than the declaration it is `undefined`.
+
+```jsx
+function myFunc(a, b) {
+  console.log(a, b);
+}
+myFunc(1); // 1, undefined
+```
+
+**Default Parameter value**
+
+```jsx
+function myFunc(a, b = 10) {
+  console.log(a, b);
+}
+
+myFunc(1); // 1, 10
+```
+
+**********************\*\***********************Function Rest Parameter**********************\*\***********************
+
+```jsx
+function summerize(...args) {
+  let sum = -0;
+  for (let arg of args) {
+    sum += arg;
+  }
+}
+```
+
+********\*\*\*\*********Argument Object********\*\*\*\*********
+
+```jsx
+function summerize() {
+  let sum = 0;
+  for (let i = 0; i < arguments.length; i++) {
+    sum += arguments[i];
+  }
+  return sum;
+}
+```
+
+**************\*\***************Changing value in the function body**************\*\***************
+
+```jsx
+let number = 12;
+function changeOfPrimitiveData(num) {
+  num = 5;
+}
+changeOfPrimitiveData(number);
+console.log(number); // 12
+```
+
+**Objects are passed by reference**
+
+```jsx
+let ob = { body: "body" };
+function changeOfNonPrimitiveData(obj) {
+  obj.body = "BODY";
+}
+changeOfNonPrimitiveData(ob);
+console.log(ob); // {body: "BODY"}
+```
