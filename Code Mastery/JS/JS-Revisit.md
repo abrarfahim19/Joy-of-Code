@@ -1673,7 +1673,7 @@ function myFunc(a, b = 10) {
 myFunc(1); // 1, 10
 ```
 
-**********************\*\***********************Function Rest Parameter**********************\*\***********************
+**********\*\***********\*\***********\*\***********Function Rest Parameter**********\*\***********\*\***********\*\***********
 
 ```jsx
 function summerize(...args) {
@@ -1684,7 +1684,7 @@ function summerize(...args) {
 }
 ```
 
-********\*\*\*\*********Argument Object********\*\*\*\*********
+**\*\*\*\***\*\*\*\***\*\*\*\***Argument Object**\*\*\*\***\*\*\*\***\*\*\*\***
 
 ```jsx
 function summerize() {
@@ -1696,7 +1696,7 @@ function summerize() {
 }
 ```
 
-**************\*\***************Changing value in the function body**************\*\***************
+******\*\*******\*\*******\*\*******Changing value in the function body******\*\*******\*\*******\*\*******
 
 ```jsx
 let number = 12;
@@ -1716,4 +1716,66 @@ function changeOfNonPrimitiveData(obj) {
 }
 changeOfNonPrimitiveData(ob);
 console.log(ob); // {body: "BODY"}
+```
+
+## Function Invocation
+
+******\*\*\*\*******Invoking a function as a function******\*\*\*\*******
+
+```jsx
+function multiply(num1, num2) {
+  return num1 * num2;
+}
+
+multiply(4, 5);
+```
+
+**\*\*\*\***Global Object**\*\*\*\***
+
+```jsx
+function globalThis() {
+  return this;
+}
+
+globalThis();
+```
+
+****************\*\*\*\*****************Invoking a function as a method****************\*\*\*\*****************
+
+```jsx
+const person = {
+  firstName: "Mr. ",
+  secondName: "Satoshi",
+  fullName: function () {
+    return this.firstName + this.secondName;
+  },
+};
+
+person.fullName(); // will return Mr. Satoshi
+```
+
+```jsx
+const person = {
+  firstName: "Mr. ",
+  secondName: "Satoshi",
+  fullName: function () {
+    return this;
+  },
+};
+
+person.fullName(); // will return [object object]
+```
+
+****\*\*****Invoking a function with function constructor****\*\*****
+
+Invoking a function with `new` is a constructor invocation. Though it looks like it will create function it actually creates an object _[Since javascript functions are object]_
+
+```jsx
+function myFunction(arg1, arg2) {
+  this.firstName = arg1;
+  this.seconName = arg2;
+}
+
+const myObj = new myFunction("Mr.", "Satoshi");
+myObj.firstName; // Mr.
 ```
