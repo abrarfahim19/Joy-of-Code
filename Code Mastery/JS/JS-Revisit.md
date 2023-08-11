@@ -1673,7 +1673,7 @@ function myFunc(a, b = 10) {
 myFunc(1); // 1, 10
 ```
 
-**********\*\***********\*\***********\*\***********Function Rest Parameter**********\*\***********\*\***********\*\***********
+****\*\*****\*\*****\*\*****\*\*****\*\*****\*\*****\*\*****Function Rest Parameter****\*\*****\*\*****\*\*****\*\*****\*\*****\*\*****\*\*****
 
 ```jsx
 function summerize(...args) {
@@ -1696,7 +1696,7 @@ function summerize() {
 }
 ```
 
-******\*\*******\*\*******\*\*******Changing value in the function body******\*\*******\*\*******\*\*******
+**\*\***\*\***\*\***\*\***\*\***\*\***\*\***Changing value in the function body**\*\***\*\***\*\***\*\***\*\***\*\***\*\***
 
 ```jsx
 let number = 12;
@@ -1720,7 +1720,7 @@ console.log(ob); // {body: "BODY"}
 
 ## Function Invocation
 
-******\*\*\*\*******Invoking a function as a function******\*\*\*\*******
+**\*\***\*\*\*\***\*\***Invoking a function as a function**\*\***\*\*\*\***\*\***
 
 ```jsx
 function multiply(num1, num2) {
@@ -1740,7 +1740,7 @@ function globalThis() {
 globalThis();
 ```
 
-****************\*\*\*\*****************Invoking a function as a method****************\*\*\*\*****************
+******\*\*\*\*******\*\*\*\*******\*\*\*\*******Invoking a function as a method******\*\*\*\*******\*\*\*\*******\*\*\*\*******
 
 ```jsx
 const person = {
@@ -1766,7 +1766,7 @@ const person = {
 person.fullName(); // will return [object object]
 ```
 
-****\*\*****Invoking a function with function constructor****\*\*****
+\***\*\*\*\*\***Invoking a function with function constructor\***\*\*\*\*\***
 
 Invoking a function with `new` is a constructor invocation. Though it looks like it will create function it actually creates an object _[Since javascript functions are object]_
 
@@ -1778,4 +1778,84 @@ function myFunction(arg1, arg2) {
 
 const myObj = new myFunction("Mr.", "Satoshi");
 myObj.firstName; // Mr.
+```
+
+## Function call()
+
+<aside>
+💡 **All function are methods *[of an object or Global Object]***
+
+</aside>
+
+`call()` can be used to invoke (call) a method with an owner object as argument
+
+```jsx
+const Person = {
+  fullName: function () {
+    return this.firstName + this.secondName;
+  },
+};
+
+const person1 = {
+  firstName: "Satoshi",
+  secondName: "Nakamoto",
+};
+
+const person2 = {
+  firstName: "Elon",
+  secondName: "Musk",
+};
+
+Person.fullName.call(person1);
+Person.fullName.call(person2);
+```
+
+`call()` also accepts arguments. And these arguments will be passed to the method.
+
+```jsx
+const Person = {
+  details: function (location, country) {
+    return (
+      this.firstName +
+      " " +
+      this.secondName +
+      " is from " +
+      location +
+      " " +
+      country
+    );
+  },
+};
+
+const person1 = {
+  firstName: "Satoshi",
+  secondName: "Nakamoto",
+};
+
+Person.details.call(person1, "Dhaka", "Bangladesh");
+```
+
+## Function apply()
+
+Function apply is same as function call(). Difference is it allows the parameter to be passed in an array.
+
+```jsx
+const Person = {
+  details: function (city, country) {
+    return this.firstname + this.secondName + city + country;
+  },
+};
+
+const person1 = {
+  firstName: "Satoshi",
+  secondName: "Nakamoto",
+};
+
+Person.details.apply(person1, ["Dhaka", "Bangladesh"]);
+```
+
+Apply makes it possible to use `Math.max()`
+
+```jsx
+Math.max.apply(null, [1, 3, 5, 15, 97]);
 ```
