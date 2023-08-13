@@ -1673,7 +1673,7 @@ function myFunc(a, b = 10) {
 myFunc(1); // 1, 10
 ```
 
-****\*\*****\*\*****\*\*****\*\*****\*\*****\*\*****\*\*****Function Rest Parameter****\*\*****\*\*****\*\*****\*\*****\*\*****\*\*****\*\*****
+\***\*\*\*\*\***\*\*\***\*\*\*\*\***\*\*\***\*\*\*\*\***\*\*\***\*\*\*\*\***Function Rest Parameter\***\*\*\*\*\***\*\*\***\*\*\*\*\***\*\*\***\*\*\*\*\***\*\*\***\*\*\*\*\***
 
 ```jsx
 function summerize(...args) {
@@ -1740,7 +1740,7 @@ function globalThis() {
 globalThis();
 ```
 
-******\*\*\*\*******\*\*\*\*******\*\*\*\*******Invoking a function as a method******\*\*\*\*******\*\*\*\*******\*\*\*\*******
+**\*\***\*\*\*\***\*\***\*\*\*\***\*\***\*\*\*\***\*\***Invoking a function as a method**\*\***\*\*\*\***\*\***\*\*\*\***\*\***\*\*\*\***\*\***
 
 ```jsx
 const person = {
@@ -1858,4 +1858,23 @@ Apply makes it possible to use `Math.max()`
 
 ```jsx
 Math.max.apply(null, [1, 3, 5, 15, 97]);
+```
+
+### Function bind()
+
+Function bind is used to borrow method of object for another object. It returns a function that needs to be called
+
+```jsx
+const Person = {
+  fullName: function () {
+    return this.firstName + " " + this.secondName;
+  },
+};
+
+const member = {
+  firstName: "Abrar",
+  secondName: "Fahim",
+};
+
+Person.fullName.bind(member);
 ```
