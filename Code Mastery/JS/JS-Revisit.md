@@ -1878,3 +1878,19 @@ const member = {
 
 Person.fullName.bind(member);
 ```
+
+bind() is also used to preserve the `this` in a function
+
+```jsx
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  display: function () {
+    let x = document.getElementById("demo");
+    x.innerHTML = this.firstName + " " + this.lastName;
+  },
+};
+
+let display = person.display.bind(person);
+setTimeout(display, 3000);
+```
